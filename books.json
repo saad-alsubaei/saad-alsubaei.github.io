@@ -16,11 +16,12 @@
   "nameArt": "assets/name.svg",
   "titleArt": "assets/title.svg",
   "theme": {
-   "preset": "navy",
-   "primary": "#1B2F55",
-   "accent": "#C9A45C",
-   "bg": "#F6F2EA",
-   "ink": "#1B2F55"
+   "primary": "#1E4E8C",
+   "accent": "#BFD3EE",
+   "bg": "#F5F7FA",
+   "ink": "#16325C",
+   "highlight": "#C8323C",
+   "light": true
   },
   "social": {
    "youtube": "https://www.youtube.com/@alsubaeisaaad",
