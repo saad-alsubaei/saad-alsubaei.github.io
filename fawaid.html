@@ -17,7 +17,7 @@
 <script>try{var _t=localStorage.getItem("lib-theme:"+location.pathname.replace(/[^/]*$/,""));if(_t){var _s=document.getElementById("lib-theme")||document.createElement("style");_s.id="lib-theme";_s.textContent=_t;if(!_s.parentNode)document.head.appendChild(_s)}}catch(e){}</script>
 <link rel="stylesheet" href="assets/style.css?v=43">
 <link rel="stylesheet" href="assets/home.css?v=58">
-<link rel="stylesheet" href="assets/fawaid.css?v=3">
+<link rel="stylesheet" href="assets/fawaid.css?v=4">
 </head>
 <body class="home fw-page">
 <header class="topbar" id="topbar">
@@ -58,6 +58,7 @@
 
 <main class="fw-main"><div class="wrap">
   <div class="fw-grid" id="fwGrid"></div>
+  <button type="button" class="fw-more" id="fwMore" hidden>عرض المزيد من الفوائد</button>
   <p class="fw-empty" id="fwEmpty">لا توجد فوائد مطابقة لبحثك.</p>
   <noscript><p>فعّل JavaScript لعرض الفوائد.</p></noscript>
 </div></main>
@@ -145,18 +146,29 @@
   function render() {
     const nq = norm(q).trim(), terms = nq.split(/\s+/).filter(Boolean);
     view = items.filter((x) => (!cat || x.cat === cat) && terms.every((t) => x._q.includes(t)));
-    const g = $("fwGrid"); g.replaceChildren();
-    view.forEach((x) => {
+    const g = $("fwGrid"); g.replaceChildren(); shown = 0;
+    more();
+    $("fwEmpty").classList.toggle("on", !view.length);
+    $("fwRes").textContent = (q || cat) ? "النتائج: " + en(view.length) : "";
+  }
+  // تحميل تدريجي: ٢٤ بطاقة ثم المزيد عند الاقتراب من آخر الصفحة (الصفحة تبقى خفيفة مهما زادت البطاقات)
+  let shown = 0; const STEP = 24;
+  function more() {
+    const g = $("fwGrid");
+    view.slice(shown, shown + STEP).forEach((x) => {
       const b = el("button", "fw-card"); b.type = "button"; b.setAttribute("aria-label", x.title || "فائدة");
-      const ph = el("span", "fw-ph"); ph.style.setProperty("--fw-bg", `url("${new URL(x.thumb || x.img, location.href).href}")`);
-      const im = el("img"); im.loading = "lazy"; im.decoding = "async"; im.alt = (x.title || "") + (x.text ? " — " + x.text : ""); im.src = x.thumb || x.img; ph.appendChild(im);
+      const ph = el("span", "fw-ph");
+      const im = el("img"); im.loading = "lazy"; im.decoding = "async"; im.alt = (x.title || "") + (x.text ? " — " + x.text : ""); im.onload = () => ph.style.setProperty("--fw-bg", `url("${im.currentSrc || im.src}")`); im.src = x.thumb || x.img; ph.appendChild(im);
       if (isNew(x)) ph.appendChild(el("span", "fw-new", "جديد"));
       const cap = el("span", "fw-cap"); cap.appendChild(el("b", "", x.title || "")); if (x.cat) cap.appendChild(el("small", "", x.cat));
       b.append(ph, cap); b.onclick = () => openAt(x.id); g.appendChild(b);
     });
-    $("fwEmpty").classList.toggle("on", !view.length);
-    $("fwRes").textContent = (q || cat) ? "النتائج: " + en(view.length) : "";
+    shown = Math.min(view.length, shown + STEP);
+    $("fwMore").hidden = shown >= view.length;
   }
+  const sentinel = $("fwMore");
+  sentinel.onclick = more;
+  if ("IntersectionObserver" in window) new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting) && shown < view.length) more(); }, { rootMargin: "900px 0px" }).observe(sentinel);
   const inp = $("fwQ");
   inp.addEventListener("input", () => { q = inp.value; $("fwX").hidden = !q; render(); });
   $("fwX").onclick = () => { inp.value = ""; q = ""; $("fwX").hidden = true; render(); inp.focus(); };

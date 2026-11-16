@@ -32,7 +32,7 @@
 <script>try{var _t=localStorage.getItem("lib-theme:"+location.pathname.replace(/[^/]*$/,""));if(_t){var _s=document.getElementById("lib-theme")||document.createElement("style");_s.id="lib-theme";_s.textContent=_t;if(!_s.parentNode)document.head.appendChild(_s)}}catch(e){}</script>
 <link rel="stylesheet" href="assets/style.css?v=43">
 <link rel="stylesheet" href="assets/home.css?v=58">
-<link rel="stylesheet" href="assets/fawaid.css?v=3">
+<link rel="stylesheet" href="assets/fawaid.css?v=4">
 </head>
 <body class="home">
 <div class="datebar" id="today" aria-label="تاريخ اليوم"></div>
@@ -837,7 +837,7 @@
       $("fwhSub").textContent = en(items.length) + " " + plural(items.length, "card") + " علمية مختصرة، تُقرأ في دقيقة وتُشارك بضغطة.";
       const st = $("fwhStrip");
       items.slice(0, 10).forEach((x) => { const a = el("a"); a.href = "fawaid.html?f=" + encodeURIComponent(x.id); a.setAttribute("aria-label", x.title || "فائدة");
-        const ph = el("span", "fw-ph"); ph.style.setProperty("--fw-bg", `url("${new URL(x.thumb || x.img, location.href).href}")`); const im = el("img"); im.loading = "lazy"; im.alt = x.title || ""; im.src = x.thumb || x.img; ph.appendChild(im); a.appendChild(ph); st.appendChild(a); });
+        const ph = el("span", "fw-ph"); const im = el("img"); im.loading = "lazy"; im.alt = x.title || ""; im.onload = () => ph.style.setProperty("--fw-bg", `url("${im.currentSrc || im.src}")`); im.src = x.thumb || x.img; ph.appendChild(im); a.appendChild(ph); st.appendChild(a); });
       if (items.length > 10) { const m = el("a", "more", "عرض " + en(items.length - 10) + " فائدة أخرى ←"); m.href = "fawaid.html"; st.appendChild(m); }
       $("fwh").hidden = false; $("navFw").hidden = false;
     } catch (e) {}
