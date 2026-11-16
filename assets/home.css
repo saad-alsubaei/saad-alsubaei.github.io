@@ -792,3 +792,4 @@ body.vm-open{overflow:hidden}
 .vm-cap b{font-family:var(--display);font-size:18px;font-weight:700}
 .vm-cap a{margin-inline-start:auto;color:#fff;background:rgb(255 255 255 / .14);border:1px solid rgb(255 255 255 / .3);padding:6px 14px;border-radius:999px;text-decoration:none;font-weight:600}
 .vm-box.tw .vm-frame{height:min(74vh,700px)}
+a.mv-reel{display:block;text-decoration:none}

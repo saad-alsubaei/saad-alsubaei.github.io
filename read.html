@@ -586,6 +586,8 @@ async function buildOutline() {
     } };
     await walk(items, 0); outline = out.slice(0, 400);
   } catch (e) { outline = []; }
+  // v41: عناوين الفهرس المطبوع من books.json (chapters: [{t, p}] بأرقام الكتاب المطبوعة) إذا لم يكن في الملف فهرس إلكتروني
+  if (!outline.length && Array.isArray(book.chapters)) outline = book.chapters.filter((c) => c && c.t && +c.p).map((c) => ({ t: String(c.t), p: Math.min(N, +c.p + OFF), l: +c.l || 0 }));
   $("tocBtn").hidden = !(TOC || outline.length);
   // تعريف أول مرة: نلفت نظر القارئ لزر الفهرس مرة واحدة فقط
   if (!$("tocBtn").hidden && !store.get("tocSeen")) { store.set("tocSeen", "1"); $("tocBtn").classList.add("glow"); setTimeout(() => toast("📑 لهذا الكتاب فهرس: اضغط «الفهرس» للانتقال إليه"), 1400); setTimeout(() => $("tocBtn").classList.remove("glow"), 6000); }
