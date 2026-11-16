@@ -1,0 +1,829 @@
+{
+ "channel": "UCqBid7ELy5anliG0BWxK6Vg",
+ "lists": [
+  {
+   "id": "PLGYl6zkEW4GjNXJBm7zZ3aTr9FURUFk9E",
+   "title": "الآراء الفقهية الشاذة",
+   "count": 2
+  },
+  {
+   "id": "PLGYl6zkEW4GhukGdqn-MQ9ItUYfFt5odO",
+   "title": "مجالس السنة",
+   "count": 4
+  },
+  {
+   "id": "PLGYl6zkEW4Gh7RHi0zyf9OkW4m8Nef92p",
+   "title": "وقفات مع سنن النسائي الصغرى",
+   "count": 4
+  },
+  {
+   "id": "PLGYl6zkEW4GjYIL3lX3ilaIIo7YF6FG3J",
+   "title": "وقفات مع جامع الترمذي",
+   "count": 10
+  },
+  {
+   "id": "PLGYl6zkEW4GjF56RoNOYVkH7ip8ASKN0C",
+   "title": "وقفات مع سنن أبي داود",
+   "count": 8
+  },
+  {
+   "id": "PLGYl6zkEW4Gh9SINaTPPE2M1P6DVDdA44",
+   "title": "وقفات مع صحيح مسلم",
+   "count": 6
+  },
+  {
+   "id": "PLGYl6zkEW4GhbU3TI5Omm9QV0z_9CPQ3Q",
+   "title": "وقفات مع صحيح البخاري",
+   "count": 5
+  },
+  {
+   "id": "PLGYl6zkEW4GgfQcfAXYzqz1xJjCtwNOGX",
+   "title": "التعليق على كتاب الحوادث والبدع للطرطوشي",
+   "count": 6
+  },
+  {
+   "id": "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_",
+   "title": "المحاضرات",
+   "count": 14
+  },
+  {
+   "id": "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP",
+   "title": "شرح بلوغ المرام وآداب المشي إلى الصلاة",
+   "count": 15
+  }
+ ],
+ "videos": [
+  {
+   "yt": "H-DSNW0LD8E",
+   "title": "بعض الآثار في التمائم المعلقة من القرآن | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-10",
+   "short": false,
+   "lists": []
+  },
+  {
+   "yt": "C0y6PJvkuuQ",
+   "title": "(الدعاء) بين ظهر وعصر (الأربعاء) | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-10",
+   "short": true,
+   "lists": []
+  },
+  {
+   "yt": "yWqewAtLjyg",
+   "title": "\"الطفولة في ظل الجوال ووسائل التواصل الاجتماعي\"  | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": false,
+   "lists": []
+  },
+  {
+   "yt": "7nUYAPBKgOk",
+   "title": "حديث (الجساسة) بين القبول والرد | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": false,
+   "lists": []
+  },
+  {
+   "yt": "l8AQY_AgsBs",
+   "title": "هل (الحنَّان) من أسماء الله عز وجل؟  | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": false,
+   "lists": []
+  },
+  {
+   "yt": "8gpB-WaQmZo",
+   "title": "شهر (ديسمبر) والوباء! |  د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": true,
+   "lists": []
+  },
+  {
+   "yt": "_2jOwilkCFM",
+   "title": "إذا نَزَلَ آب في القلب، حلَّ آذار في العين | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": true,
+   "lists": []
+  },
+  {
+   "yt": "D1VxV7Q_rvA",
+   "title": "الهياط والمهايطية | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": true,
+   "lists": []
+  },
+  {
+   "yt": "GlYhscTzal0",
+   "title": "جعل الله يومي قبل يومك! | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": true,
+   "lists": []
+  },
+  {
+   "yt": "PBMTK7ROt1I",
+   "title": "فائدة حول (قليل المروءة) | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": true,
+   "lists": []
+  },
+  {
+   "yt": "tRERcrBv5J4",
+   "title": "حديث  فيه بشارة لكل مؤمن | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": false,
+   "lists": []
+  },
+  {
+   "yt": "tV1WCUpMH3Q",
+   "title": "طعام المتباريين |د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": true,
+   "lists": []
+  },
+  {
+   "yt": "1h7vmlEupxU",
+   "title": "تنبيه يتعلق بقراءة سورة الفاتحة | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": true,
+   "lists": []
+  },
+  {
+   "yt": "G2_-h3ZCFkc",
+   "title": "خطأ التساهل في هذا! | تنبيه يتعلق بقراءة سورة الفاتحة | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": true,
+   "lists": []
+  },
+  {
+   "yt": "Aa3wchIKoGA",
+   "title": "دعاء عظيم رفعه اثنا عشر ملكًا | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-09-09",
+   "short": true,
+   "lists": []
+  },
+  {
+   "yt": "ScddvMKGk6U",
+   "title": "اقتضاء العلم والعمل | فضيلة الشيخ د. سعد السبيعي.",
+   "date": "2023-10-12",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "SnQX67Q-tMs",
+   "title": "فضل الأعمال الصالحة في العشر",
+   "date": "2023-06-22",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "Y7qdorOEuV8",
+   "title": "1-الآراء الفقهية الشاذة: بدعة صيام يوم عرفة",
+   "date": "2023-03-23",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjNXJBm7zZ3aTr9FURUFk9E"
+   ]
+  },
+  {
+   "yt": "wXZDiLhwYlQ",
+   "title": "2-الآراء الفقهية الشاذة: كشف رأس المرأة في الصلاة",
+   "date": "2023-03-23",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjNXJBm7zZ3aTr9FURUFk9E"
+   ]
+  },
+  {
+   "yt": "wkfYqrVD0eE",
+   "title": "فوائد حول صحيح مسلم",
+   "date": "2023-03-21",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gh9SINaTPPE2M1P6DVDdA44"
+   ]
+  },
+  {
+   "yt": "-vC60Aw5SNc",
+   "title": "معاوية بن أبي سفيان رضي الله عنهما عند السلف",
+   "date": "2023-03-21",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "O_JB3SDvyEk",
+   "title": "15-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2023-01-09",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "J66BrNukJjg",
+   "title": "14-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2023-01-06",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "HJ0mTTbhFd0",
+   "title": "12-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2023-01-04",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "AAxwbGO6MIA",
+   "title": "13-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2023-01-04",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "UKEH8c3SPF8",
+   "title": "11-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2023-01-02",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "zRvxGFPuR3A",
+   "title": "1-مجالس السنة: منزلة السنة في الإسلام",
+   "date": "2022-12-30",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GhukGdqn-MQ9ItUYfFt5odO"
+   ]
+  },
+  {
+   "yt": "Po4rU4Pxc_w",
+   "title": "2-مجالس السنة: تعظيم الصحابة للسنة النبوية",
+   "date": "2022-12-30",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GhukGdqn-MQ9ItUYfFt5odO"
+   ]
+  },
+  {
+   "yt": "qFXNSORlPI8",
+   "title": "3-مجالس السنة: تعظيم الأمة للسنة النبوية",
+   "date": "2022-12-30",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GhukGdqn-MQ9ItUYfFt5odO"
+   ]
+  },
+  {
+   "yt": "JEY7NYofP-E",
+   "title": "خاطرة عن الشتاء",
+   "date": "2022-12-30",
+   "short": true,
+   "lists": [
+    "PLGYl6zkEW4GhukGdqn-MQ9ItUYfFt5odO"
+   ]
+  },
+  {
+   "yt": "jvFokB4SvUE",
+   "title": "10-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2022-12-30",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "ymU99uBVbPo",
+   "title": "9-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2022-12-28",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "uUwwgPuXO7o",
+   "title": "8-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2022-12-27",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "lP_7wVE3OBg",
+   "title": "7-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2022-12-26",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "bmoyWM1YuPM",
+   "title": "تصحيح وبيان علل حديث: (من غسل يوم الجمعة واغتسل، وبكر وابتكر…)",
+   "date": "2022-12-22",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "iwL5zpxt9HI",
+   "title": "إنصاف الإمام أبي حنيفة رحمه الله",
+   "date": "2022-12-21",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "v_wxAQ8w45w",
+   "title": "كيفية وصول الحديث النبوي إلينا بين المخالفين والموافقين",
+   "date": "2022-12-21",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "Hz4Iyd5Jflo",
+   "title": "5-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2022-12-21",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "xOD6a1e3PJM",
+   "title": "6-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2022-12-21",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "WkiJfypPgvA",
+   "title": "1-وقفات مع سنن النسائي الصغرى",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gh7RHi0zyf9OkW4m8Nef92p"
+   ]
+  },
+  {
+   "yt": "r9fWjy7Ujas",
+   "title": "2-وقفات مع سنن النسائي الصغرى",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gh7RHi0zyf9OkW4m8Nef92p"
+   ]
+  },
+  {
+   "yt": "cnvhw5jXc_E",
+   "title": "3-وقفات مع سنن النسائي الصغرى",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gh7RHi0zyf9OkW4m8Nef92p"
+   ]
+  },
+  {
+   "yt": "ugE92B6JjGI",
+   "title": "4-وقفات مع سنن النسائي الصغرى",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gh7RHi0zyf9OkW4m8Nef92p"
+   ]
+  },
+  {
+   "yt": "747_2Rhjc9w",
+   "title": "1-وقفات مع جامع الترمذي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjYIL3lX3ilaIIo7YF6FG3J"
+   ]
+  },
+  {
+   "yt": "eovQQ7dJP5E",
+   "title": "2-وقفات مع جامع الترمذي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjYIL3lX3ilaIIo7YF6FG3J"
+   ]
+  },
+  {
+   "yt": "FfrfcqbLZSA",
+   "title": "3-وقفات مع جامع الترمذي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjYIL3lX3ilaIIo7YF6FG3J"
+   ]
+  },
+  {
+   "yt": "JAKxzViKiF8",
+   "title": "4-وقفات مع جامع الترمذي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjYIL3lX3ilaIIo7YF6FG3J"
+   ]
+  },
+  {
+   "yt": "kaAdNn9_7Vc",
+   "title": "5-وقفات مع جامع الترمذي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjYIL3lX3ilaIIo7YF6FG3J"
+   ]
+  },
+  {
+   "yt": "ykcD_yMl3ww",
+   "title": "6-وقفات مع جامع الترمذي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjYIL3lX3ilaIIo7YF6FG3J"
+   ]
+  },
+  {
+   "yt": "SlcASHbHbK4",
+   "title": "7-وقفات مع جامع الترمذي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjYIL3lX3ilaIIo7YF6FG3J"
+   ]
+  },
+  {
+   "yt": "FkddnnFT2HM",
+   "title": "8-وقفات مع جامع الترمذي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjYIL3lX3ilaIIo7YF6FG3J"
+   ]
+  },
+  {
+   "yt": "2OhvzZD6Q8k",
+   "title": "9-وقفات مع جامع الترمذي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjYIL3lX3ilaIIo7YF6FG3J"
+   ]
+  },
+  {
+   "yt": "NtxykQcFY00",
+   "title": "10-وقفات مع جامع الترمذي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjYIL3lX3ilaIIo7YF6FG3J"
+   ]
+  },
+  {
+   "yt": "JDYZKDF8ueE",
+   "title": "2-التعليق على كتاب الحوادث والبدع للطرطوشي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GgfQcfAXYzqz1xJjCtwNOGX"
+   ]
+  },
+  {
+   "yt": "nnvggI67DbI",
+   "title": "3-التعليق على كتاب الحوادث والبدع للطرطوشي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GgfQcfAXYzqz1xJjCtwNOGX"
+   ]
+  },
+  {
+   "yt": "41ZZwZO79wU",
+   "title": "4-التعليق على كتاب الحوادث والبدع للطرطوشي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GgfQcfAXYzqz1xJjCtwNOGX"
+   ]
+  },
+  {
+   "yt": "iYwbCHkzC3c",
+   "title": "5-التعليق على كتاب الحوادث والبدع للطرطوشي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GgfQcfAXYzqz1xJjCtwNOGX"
+   ]
+  },
+  {
+   "yt": "0W7S-XAlrew",
+   "title": "6-التعليق على كتاب الحوادث والبدع للطرطوشي",
+   "date": "2022-12-20",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GgfQcfAXYzqz1xJjCtwNOGX"
+   ]
+  },
+  {
+   "yt": "BibYrhFtVlo",
+   "title": "1-وقفات مع سنن أبي داود",
+   "date": "2022-12-19",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjF56RoNOYVkH7ip8ASKN0C"
+   ]
+  },
+  {
+   "yt": "6-glqiRGgr4",
+   "title": "2-وقفات مع سنن أبي داود",
+   "date": "2022-12-19",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjF56RoNOYVkH7ip8ASKN0C"
+   ]
+  },
+  {
+   "yt": "mJQb52yqK9w",
+   "title": "4-وقفات مع سنن أبي داود",
+   "date": "2022-12-19",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjF56RoNOYVkH7ip8ASKN0C"
+   ]
+  },
+  {
+   "yt": "Y6GGX5twM-k",
+   "title": "5-وقفات مع سنن أبي داود",
+   "date": "2022-12-19",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjF56RoNOYVkH7ip8ASKN0C"
+   ]
+  },
+  {
+   "yt": "1s_4-a7_Uw4",
+   "title": "6-وقفات مع سنن أبي داود",
+   "date": "2022-12-19",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjF56RoNOYVkH7ip8ASKN0C"
+   ]
+  },
+  {
+   "yt": "of8MV1o3Jm8",
+   "title": "7-وقفات مع سنن أبي داود",
+   "date": "2022-12-19",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjF56RoNOYVkH7ip8ASKN0C"
+   ]
+  },
+  {
+   "yt": "HgdQ_A61gEg",
+   "title": "8-وقفات مع سنن أبي داود",
+   "date": "2022-12-19",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjF56RoNOYVkH7ip8ASKN0C"
+   ]
+  },
+  {
+   "yt": "LBlEaDEN0O0",
+   "title": "9-وقفات مع سنن أبي داود",
+   "date": "2022-12-19",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjF56RoNOYVkH7ip8ASKN0C"
+   ]
+  },
+  {
+   "yt": "y296TkZNouY",
+   "title": "فتنة المسيح الدجّال",
+   "date": "2022-12-19",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "tVGpk33ZN3c",
+   "title": "4-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2022-12-19",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "rk3q-vb1Obk",
+   "title": "1-وقفات مع صحيح مسلم",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gh9SINaTPPE2M1P6DVDdA44"
+   ]
+  },
+  {
+   "yt": "nnOGNxh_NqE",
+   "title": "2-وقفات مع صحيح مسلم",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gh9SINaTPPE2M1P6DVDdA44"
+   ]
+  },
+  {
+   "yt": "6UASFIIRsG8",
+   "title": "3-وقفات مع صحيح مسلم",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gh9SINaTPPE2M1P6DVDdA44"
+   ]
+  },
+  {
+   "yt": "AU3ffI8R18c",
+   "title": "4-وقفات مع صحيح مسلم",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gh9SINaTPPE2M1P6DVDdA44"
+   ]
+  },
+  {
+   "yt": "yIjimH9xeok",
+   "title": "5-وقفات مع صحيح مسلم",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gh9SINaTPPE2M1P6DVDdA44"
+   ]
+  },
+  {
+   "yt": "xGHBa0k6jE8",
+   "title": "1-وقفات مع صحيح البخاري",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GhbU3TI5Omm9QV0z_9CPQ3Q"
+   ]
+  },
+  {
+   "yt": "lI-0u79iOv8",
+   "title": "2-وقفات مع صحيح البخاري",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GhbU3TI5Omm9QV0z_9CPQ3Q"
+   ]
+  },
+  {
+   "yt": "0K1GlFAcpZ8",
+   "title": "3-وقفات مع صحيح البخاري",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GhbU3TI5Omm9QV0z_9CPQ3Q"
+   ]
+  },
+  {
+   "yt": "_joWb1Cz0Po",
+   "title": "4-وقفات مع صحيح البخاري",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GhbU3TI5Omm9QV0z_9CPQ3Q"
+   ]
+  },
+  {
+   "yt": "-nqfPF-73uM",
+   "title": "5-وقفات مع صحيح البخاري",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GhbU3TI5Omm9QV0z_9CPQ3Q"
+   ]
+  },
+  {
+   "yt": "MZgU8nWqgi4",
+   "title": "1-التعليق على كتاب الحوادث والبدع للطرطوشي",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GgfQcfAXYzqz1xJjCtwNOGX"
+   ]
+  },
+  {
+   "yt": "jSzB4ad9wCs",
+   "title": "7-محاضرة: (إنا كفيناك المستهزئين)",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "ypAEC5TaTWI",
+   "title": "2-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "HR082p4a_Rg",
+   "title": "3-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2022-12-18",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  },
+  {
+   "yt": "F6jeryW0qFs",
+   "title": "1-إتحاف الجماعة ببيان أشراط الساعة",
+   "date": "2022-12-17",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "p56Th-6CNlA",
+   "title": "2-صفحات مشرقة من تاريخ المحدّثين",
+   "date": "2022-12-17",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "XcMFj60UOCk",
+   "title": "3-حياة الفاروق (دروس وعبر)",
+   "date": "2022-12-17",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "OaAtQXt6VNQ",
+   "title": "4-الرافضة تاريخهم وعقائدهم",
+   "date": "2022-12-17",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "hjVdlEpzJkU",
+   "title": "5-حياة البرزخ",
+   "date": "2022-12-17",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "W0uusX8tx2U",
+   "title": "6-أمراض القلوب",
+   "date": "2022-12-17",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
+   ]
+  },
+  {
+   "yt": "yGcxxPeou-g",
+   "title": "1-شرح كتاب بلوغ المرام وكتاب آداب المشي إلى الصلاة",
+   "date": "2022-12-16",
+   "short": false,
+   "lists": [
+    "PLGYl6zkEW4GjaIe7AYtl9ip4KpFqJR9kP"
+   ]
+  }
+ ],
+ "updated": "2026-11-16T16:55Z"
+}
