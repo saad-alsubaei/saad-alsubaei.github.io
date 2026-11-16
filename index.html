@@ -31,7 +31,7 @@
 <!-- THEME:START (يُولَّد تلقائياً: python3 tools/configure.py) --><style id="lib-theme">:root:root{--t-primary:#1e4e8c;--t-primary-rgb:30 78 140;--t-primary-l:#2c5993;--t-primary-2:#173b69;--t-primary-2-rgb:23 59 105;--t-primary-d:#13325a;--t-primary-d-rgb:19 50 90;--t-primary-dd:#0e2543;--t-primary-dd-rgb:14 37 67;--t-stage:#0c1f38;--t-stage-rgb:12 31 56;--t-sheet:#0f2542;--t-zoom:#0a192d;--t-annbar-rgb:15 39 70;--t-accent:#bfd3ee;--t-accent-rgb:191 211 238;--t-accent-2-rgb:191 211 238;--t-accent-m:#a2b3ca;--t-accent-text:#1e4e8c;--t-bg:#f5f7fa;--t-bg-rgb:245 247 250;--t-bg-2:#ebf1f8;--t-card:#fcfdfe;--t-soft:#eef2f8;--t-line:#e4ebf6;--t-line-2:#e0e6f0;--t-ink:#16325c;--t-ink-rgb:22 50 92;--t-muted:#596d8b;--t-muted-2:#607390;--t-on-dark-2:#ebf1f8;--t-on-dark-3:#f0f3f9;--t-placeholder:#7a8ba3;--t-chip:#eceff4;--t-chip-h:#eaf0f8;--t-tint:#ebf1f8;--t-tint-2:#f2f5f9;--t-pg:#fafbfc;--t-pg-2:#f0f3f9;--t-pg-ink:#b6c6dc;--t-fan:#ffffff;--t-line-h:#cddcf1;--t-line-h2:#d0dbea;--t-frame:#ffffff;--t-frame-2:#ffffff;--t-frame-h:#ffffff;--t-frame-h2:#f9fafc;--t-dot:#a9b8ce;--t-highlight:#c8323c;--t-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='160' viewBox='0 0 360 160'%3E%3Cg fill='none' stroke='%231e4e8c' stroke-linecap='round' stroke-opacity='.16'%3E%3Cpath stroke-width='1.1' d='M-10 42c40-18 80-18 120 0s80 18 120 0 80-18 140 0'/%3E%3Cpath stroke-width='.8' d='M-10 58c40-14 80-14 120 0s80 14 120 0 80-14 140 0'/%3E%3Cpath stroke-width='.7' d='M30 118c26-10 52-10 78 0s52 10 78 0'/%3E%3Cpath stroke-width='.7' d='M200 132c22-8 44-8 66 0s44 8 66 0'/%3E%3C/g%3E%3C/svg%3E");--t-head:#16325c;--t-hero-bg:radial-gradient(ellipse 55% 70% at 12% 20%,rgb(255 255 255 / .9),transparent 70%),radial-gradient(ellipse 50% 60% at 92% 85%,rgb(191 211 238 / .28),transparent 70%),linear-gradient(180deg,#edf2f8 0%,#f6f8fc 100%);--t-hero-fg:#16325c;--t-hero-title:#16325c;--t-hero-text:#475d7f;--t-hero-eyebrow:#1e4e8c;--t-hero-box-bg:rgb(255 255 255 / .78);--t-hero-ic:#fff;--t-hero-box-bd:rgb(191 211 238 / .55);--t-hero-num:#1e4e8c;--t-hero-glow:rgb(255 255 255 / .7);--t-hero-edge:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath fill='%23f5f7fa' fill-opacity='.55' d='M0 70c90-38 170-40 250-14 60-34 150-42 230-6 80-40 190-40 270 4 70-30 160-34 230 0 80-36 190-38 280 2 60-20 120-22 180-4V120H0z'/%3E%3Cpath fill='%23f5f7fa' d='M0 96c110-26 200-24 290-4 90-26 190-26 280 2 100-26 200-24 300 0 90-24 190-24 290 0 90-20 190-22 280-6V120H0z'/%3E%3C/svg%3E");--t-hero-edge-h:64px;--t-shade-rgb:14 35 63;--t-bar-rgb:255 255 255;--t-datebar:#16325c;--t-pat-op:.9;--t-frame-sh:0 0 0 1px rgb(191 211 238 / .45),0 10px 24px -18px rgb(14 35 63 / .45);--t-frame-sh-h:0 0 0 1px rgb(191 211 238 / .9),0 16px 30px -18px rgb(14 35 63 / .5);--t-card-sh:0 10px 30px -24px rgb(14 35 63 / .6);--t-wa:#1e4e8c;--t-wa-rgb:30 78 140;--t-live:#bfd3ee;--t-live-rgb:191 211 238}</style><!-- THEME:END -->
 <script>try{var _t=localStorage.getItem("lib-theme:"+location.pathname.replace(/[^/]*$/,""));if(_t){var _s=document.getElementById("lib-theme")||document.createElement("style");_s.id="lib-theme";_s.textContent=_t;if(!_s.parentNode)document.head.appendChild(_s)}}catch(e){}</script>
 <link rel="stylesheet" href="assets/style.css?v=43">
-<link rel="stylesheet" href="assets/home.css?v=57">
+<link rel="stylesheet" href="assets/home.css?v=58">
 </head>
 <body class="home">
 <div class="datebar" id="today" aria-label="تاريخ اليوم"></div>
@@ -814,104 +814,115 @@
       document.querySelector(".foot-in").classList.add("has-soc");
     }
 
-    // ----- المرئيات -----
+    // ----- المرئيات (v42): videos.json من قناة يوتيوب تلقائياً (tools/update_videos.py) + videos اليدوية في books.json -----
+    // التصنيفات = قوائم التشغيل في القناة؛ «الأحدث» أولاً، و«متنوعة» لما ليس في قائمة
     const esc = (t) => String(t || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
     const dur = (x) => { x = +x || 0; const h = Math.floor(x / 3600), m = Math.floor(x % 3600 / 60), z = x % 60, p = (v) => String(v).padStart(2, "0"); return h ? h + ":" + p(m) + ":" + p(z) : m + ":" + p(z); };
     const thumb = (id, q) => "https://i.ytimg.com/vi/" + encodeURIComponent(id) + "/" + (q || "hqdefault") + ".jpg";
     const embed = (id) => "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?autoplay=1&rel=0&playsinline=1";
     const PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>';
+    const LISTIC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="13" height="10" rx="2"/><path d="M8 8.5v3.2l2.8-1.6z" fill="currentColor"/><path d="M6 19h12M19 8v8"/></svg>';
+    const NEWIC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg>';
+    if (window.Lib && Lib.WORDS && !Lib.WORDS.clip) Lib.WORDS.clip = ["مقطع", "مقطعان", "مقاطع", "مقطعاً", "مقطع"];
+    const clips = (n) => en(n) + " " + plural(n, "clip");
+    const rtf = (() => { try { return new Intl.RelativeTimeFormat("ar", { numeric: "auto" }); } catch (e) { return null; } })();
+    const ago = (d) => { const t = Date.parse(d); if (!t || !rtf) return ""; const days = Math.round((Date.now() - t) / 86400000);
+      if (days < 7) return rtf.format(-days, "day"); if (days < 30) return rtf.format(-Math.round(days / 7), "week"); if (days < 365) return rtf.format(-Math.round(days / 30), "month"); return rtf.format(-Math.round(days / 365), "year"); };
+    const isNewV = (v) => v.date && (Date.now() - Date.parse(v.date)) / 86400000 <= 14;
     const byId = new Map(books.map((b) => [b.id, b]));
-    const seen = new Set();
-    // مقطع يوتيوب (yt) أو مقطع من منصة X (x = رقم التغريدة)
-    const vids = (Array.isArray(data.videos) ? data.videos : []).filter((v) => v && (v.yt || v.x) && v.title && !seen.has(v.yt || v.x) && seen.add(v.yt || v.x));
-    const longs = vids.filter((v) => v.yt && !v.short), shorts = vids.filter((v) => v.short || v.x);
-    if (!vids.length && !SOC.youtube) return;
-    $("vids").hidden = false; $("navVids").hidden = false;
-    if (site.videosTitle) $("mvH").textContent = site.videosTitle;
-    // أزرار القناة أعلى القسم
-    const mvL = $("mvLinks");
-    KEYS.forEach((k) => mvL.appendChild(link(k, "mv-a", true)));
+    const xUrl = (v) => "https://x.com/" + (SOC.x ? String(SOC.x).replace(/\/+$/, "").split("/").pop() : "i") + "/status/" + encodeURIComponent(v.x);
 
     // نافذة التشغيل (للمقاطع القصيرة)
     const modal = $("vModal"), mf = $("vmFrame");
-    const openModal = (v) => { const bx = modal.querySelector(".vm-box"); bx.classList.toggle("tall", !!v.short && !v.x); bx.classList.toggle("tw", !!v.x);
-      const xu = v.x ? "https://x.com/" + (site.social && site.social.x ? String(site.social.x).replace(/\/+$/, "").split("/").pop() : "i") + "/status/" + encodeURIComponent(v.x) : "";
-      if (v.x) {
-        // تضمين X الرسمي (widgets.js) داخل إطار مستقل: أثبت من Tweet.html الذي يظهر «غير موجود» لبعض المنشورات
-        const doc = '<!doctype html><html dir="rtl"><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;display:flex;justify-content:center;padding:8px;font-family:system-ui;background:#fff}a{color:#1d4e8c}</style></head><body><blockquote class="twitter-tweet" data-lang="ar" data-dnt="true" data-align="center"><a href="' + xu + '">' + esc(v.title) + '</a></blockquote><script async src="https://platform.twitter.com/widgets.js"><\/script></body></html>';
-        const f = document.createElement("iframe"); f.title = v.title; f.setAttribute("allow", "autoplay; encrypted-media; fullscreen"); f.allowFullscreen = true; f.srcdoc = doc;
-        mf.innerHTML = ""; mf.appendChild(f);
-      } else mf.innerHTML = '<iframe src="' + embed(v.yt) + '" title="' + esc(v.title) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
-      $("vmCap").innerHTML = '<b>' + esc(v.title) + '</b><a href="' + (v.x ? xu : "https://www.youtube.com/watch?v=" + encodeURIComponent(v.yt)) + '" target="_blank" rel="noopener">' + (v.x ? "شاهده على منصة X ↗" : "شاهده على يوتيوب ↗") + "</a>"; modal.hidden = false; document.body.classList.add("vm-open"); $("vmX").focus(); };
+    const openModal = (v) => { const bx = modal.querySelector(".vm-box"); bx.classList.toggle("tall", !!v.short); bx.classList.remove("tw");
+      mf.innerHTML = '<iframe src="' + embed(v.yt) + '" title="' + esc(v.title) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+      $("vmCap").innerHTML = "<b>" + esc(v.title) + '</b><a href="https://www.youtube.com/watch?v=' + encodeURIComponent(v.yt) + '" target="_blank" rel="noopener">شاهده على يوتيوب ↗</a>';
+      modal.hidden = false; document.body.classList.add("vm-open"); $("vmX").focus(); };
     const closeModal = () => { modal.hidden = true; mf.innerHTML = ""; document.body.classList.remove("vm-open"); };
     $("vmX").onclick = closeModal; modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) closeModal(); });
 
-    if (!longs.length) {
-      // بطاقة القناة: شاشة عرض فخمة باسم الدكتور، وأزرار المتابعة
-      const ch = $("mvChannel"); ch.hidden = false; $("mvSub").textContent = "دروس الدكتور ومحاضراته وفوائده المرئية على قناته.";
-      const art = site.nameArt ? '<span class="mc-name" role="img" aria-label="' + esc(site.brandSub || site.author) + '" style="--na:url(&quot;' + esc(new URL(site.nameArt, location.href).href) + '&quot;)"></span>' : "<b class=\"mc-name-t\">" + esc(site.brandSub || site.author) + "</b>";
-      ch.innerHTML = '<a class="mc-screen" href="' + esc(SOC.youtube || "#") + '" target="_blank" rel="noopener" aria-label="افتح قناة الدكتور على يوتيوب">' +
-        '<span class="mc-film"></span><span class="mc-beam"></span>' + art +
-        '<span class="mc-play">' + PLAY + '</span><span class="mc-cta">شاهد دروس الدكتور ومحاضراته</span></a>' +
-        '<div class="mc-side"><h3>قنوات الدكتور</h3><p>تابع الدروس الجديدة والفوائد اليومية أولاً بأول.</p><div class="mc-links" id="mcLinks"></div></div>';
-      KEYS.forEach((k) => $("mcLinks").appendChild(link(k, "mc-a", true)));
-      mvL.hidden = true; // الأزرار موجودة في البطاقة
-      if (shorts.length) { // مقاطع قصيرة بلا مقاطع طويلة: المقاطع مكان شاشة القناة، وبجانبها حسابات الدكتور
-        ch.classList.add("with-reels"); ch.querySelector(".mc-screen").remove(); ch.insertBefore($("mvReelsWrap"), ch.firstChild);
-        $("mvH").textContent = site.videosTitle || "مرئيات مختارة"; $("mvSub").textContent = "مقاطع من دروس الدكتور وفوائده، تُشاهَد هنا داخل المكتبة.";
-      }
-    } else {
-    $("mvSub").textContent = "مقاطع مختارة من دروس الدكتور ومحاضراته، تُشاهَد هنا داخل المكتبة.";
+    (async () => {
+      let vj = null;
+      try { const r = await fetch("videos.json?t=" + Math.floor(Date.now() / 600000), { cache: "no-cache" }); if (r.ok) vj = await r.json(); } catch (e) {}
+      const seen = new Set(), all = [], cats = [];
+      const addCat = (id, title) => { if (!cats.some((c) => c.id === id)) cats.push({ id, title }); };
+      ((vj && vj.lists) || []).forEach((l) => addCat(l.id, l.title));
+      ((vj && vj.videos) || []).forEach((v) => { if (v.yt && v.title && !seen.has(v.yt)) { seen.add(v.yt); all.push({ ...v, lists: (v.lists || []).slice() }); } });
+      (Array.isArray(data.videos) ? data.videos : []).forEach((v) => { const k = v && (v.yt || v.x); if (!k || !v.title || seen.has(k)) return; seen.add(k);
+        const w = { ...v, lists: [] }; if (v.list) { addCat("m:" + v.list, v.list); w.lists.push("m:" + v.list); } all.push(w); });
+      if (cats.length && all.some((v) => !v.lists.length)) { addCat("__misc", "متنوعة"); all.forEach((v) => { if (!v.lists.length) v.lists.push("__misc"); }); }
+      // الأحدث أولاً (المقاطع بلا تاريخ بعدها بترتيبها)
+      all.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+      if (!all.length && !SOC.youtube) return;
+      $("vids").hidden = false; $("navVids").hidden = false;
+      if (site.videosTitle) $("mvH").textContent = site.videosTitle;
+      const mvL = $("mvLinks"); KEYS.forEach((k) => mvL.appendChild(link(k, "mv-a", true)));
 
-    // المسرح: مقطع رئيسي كبير + قائمة تشغيل
-    let list = longs, cur = 0;
-    const screen = $("mvScreen"), info = $("mvInfo"), side = $("mvList");
-    function paintMain(play) {
-      const v = list[cur]; if (!v) return;
-      screen.innerHTML = play
-        ? '<iframe src="' + embed(v.yt) + '" title="' + esc(v.title) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'
-        : '<button type="button" class="mv-poster" aria-label="تشغيل: ' + esc(v.title) + '"><img alt="" src="' + thumb(v.yt, "hqdefault") + '"><span class="mv-beam"></span><span class="mv-play">' + PLAY + '</span>' + (v.dur ? '<span class="mv-dur" dir="ltr">' + dur(v.dur) + "</span>" : "") + '<span class="mv-now">' + (play === false && cur === 0 ? "مقطع مختار" : "التالي") + "</span></button>";
-      if (!play) screen.querySelector(".mv-poster").onclick = () => paintMain(true);
-      const bk = byId.get(v.book);
-      info.innerHTML = (v.src ? '<span class="mv-src">' + esc(v.src) + "</span>" : "") + "<h3>" + esc(v.title) + "</h3>" + (v.sub ? '<p class="mv-sub">' + esc(v.sub) + "</p>" : "") +
-        (bk ? '<a class="mv-book" href="' + readerUrl(bk) + '"><img alt="" src="' + esc(bk.cover) + '"><span><small>الكتاب متاح في المكتبة</small><b>' + esc(bk.title) + "</b></span><em>اقرأ الكتاب ←</em></a>" : "") +
-        '<a class="mv-yt" href="https://www.youtube.com/watch?v=' + encodeURIComponent(v.yt) + '" target="_blank" rel="noopener">على يوتيوب ↗</a>';
-      side.querySelectorAll(".mv-it").forEach((b, i) => { b.classList.toggle("on", i === cur); b.setAttribute("aria-current", i === cur ? "true" : "false"); });
-    }
-    function paintList() {
-      side.innerHTML = "";
-      list.forEach((v, i) => {
-        const b = el("button", "mv-it"); b.type = "button";
-        b.innerHTML = '<span class="mv-n" dir="ltr">' + en(i + 1) + '</span><span class="mv-th"><img loading="lazy" alt="" src="' + thumb(v.yt, "mqdefault") + '">' + (v.dur ? '<i dir="ltr">' + dur(v.dur) + "</i>" : "") + '<span class="mv-eq"><s></s><s></s><s></s></span></span><span class="mv-tt"><b>' + esc(v.title) + "</b>" + (v.sub || v.src ? "<small>" + esc(v.sub || v.src) + "</small>" : "") + (byId.has(v.book) ? '<em>📖 مرتبط بكتاب</em>' : "") + "</span>";
-        b.onclick = () => { cur = i; paintMain(true); if (innerWidth < 900) $("mvScreen").scrollIntoView({ behavior: "smooth", block: "center" }); };
-        side.appendChild(b);
-      });
-      $("mvStage").classList.toggle("solo", list.length < 2);
-    }
-    // تبويبات حسب v.list (مثل: دروس، محاضرات، لقاءات) إن وُجد أكثر من نوع
-    const tabs = [...new Set(longs.map((v) => v.list).filter(Boolean))];
-    if (tabs.length > 1) {
-      const T = $("mvTabs"); T.hidden = false;
-      ["الكل", ...tabs].forEach((t, i) => { const b = el("button", "mv-tab" + (i ? "" : " on"), t); b.type = "button"; b.setAttribute("role", "tab");
-        const n = i ? longs.filter((v) => v.list === t).length : longs.length; b.appendChild(el("small", "", en(n)));
-        b.onclick = () => { T.querySelectorAll(".mv-tab").forEach((x) => x.classList.toggle("on", x === b)); list = i ? longs.filter((v) => v.list === t) : longs; cur = 0; paintList(); paintMain(false); };
-        T.appendChild(b); });
-    }
-    if (longs.length) { $("mvStage").hidden = false; paintList(); paintMain(false); }
-    }
-    // المقاطع القصيرة: رف عمودي
-    if (shorts.length) {
-      $("mvReelsWrap").hidden = false;
-      if (!longs.length) $("mvReelsWrap").querySelector(".mv-h3").textContent = site.reelsTitle || "مقاطع مختارة";
-      shorts.forEach((v) => { const b = el(v.x ? "a" : "button", "mv-reel" + (v.x ? " is-x" : ""));
-        // مقاطع X: المنصة تمنع تضمين المنشورات الموسومة «محتوى حساس» (وكل منشورات الحساب كذلك)، فالبطاقة تفتح المنشور في X مباشرة
-        if (v.x) { b.href = "https://x.com/" + (SOC.x ? String(SOC.x).replace(/\/+$/, "").split("/").pop() : "i") + "/status/" + encodeURIComponent(v.x); b.target = "_blank"; b.rel = "noopener"; b.setAttribute("aria-label", v.title + " — يفتح في منصة X"); }
-        else { b.type = "button"; b.setAttribute("aria-label", "تشغيل: " + v.title); }
-        const art = v.x ? '<span class="mv-xart">' + IC.x + (site.nameArt ? '<span class="mc-name" style="--na:url(&quot;' + esc(new URL(site.nameArt, location.href).href) + '&quot;)"></span>' : "") + "</span>" : '<img loading="lazy" alt="" onerror="this.style.opacity=0" src="' + thumb(v.yt, "hqdefault") + '">';
-        b.innerHTML = art + '<span class="mv-badge">' + (v.x ? IC.x + "يفتح في منصة X ↗" : IC.youtube + "مقطع قصير") + '</span><span class="mv-play sm">' + PLAY + "</span><b>" + esc(v.title) + "</b>";
-        if (!v.x) b.onclick = () => openModal(v); $("mvReels").appendChild(b); });
-    }
+      if (!all.length) { // لا مقاطع بعد: بطاقة القناة
+        const ch = $("mvChannel"); ch.hidden = false; mvL.hidden = true; $("mvSub").textContent = "دروس الدكتور ومحاضراته وفوائده المرئية على قناته.";
+        const art = site.nameArt ? '<span class="mc-name" role="img" aria-label="' + esc(site.brandSub || site.author) + '" style="--na:url(&quot;' + esc(new URL(site.nameArt, location.href).href) + '&quot;)"></span>' : '<b class="mc-name-t">' + esc(site.brandSub || site.author) + "</b>";
+        ch.innerHTML = '<a class="mc-screen" href="' + esc(SOC.youtube || "#") + '" target="_blank" rel="noopener" aria-label="افتح قناة الدكتور على يوتيوب"><span class="mc-film"></span><span class="mc-beam"></span>' + art + '<span class="mc-play">' + PLAY + '</span><span class="mc-cta">شاهد دروس الدكتور ومحاضراته</span></a><div class="mc-side"><h3>قنوات الدكتور</h3><p>تابع الدروس الجديدة والفوائد اليومية أولاً بأول.</p><div class="mc-links" id="mcLinks"></div></div>';
+        KEYS.forEach((k) => $("mcLinks").appendChild(link(k, "mc-a", true)));
+        return;
+      }
+      $("mvSub").textContent = "دروس الدكتور ومحاضراته مصنّفة في مجموعات، تُشاهَد هنا داخل المكتبة، وتُضاف الجديدة تلقائياً.";
+
+      // شريط التصنيفات: «الأحدث» + قوائم التشغيل
+      const T = $("mvTabs"), inCat = (id) => id === "__new" ? all : all.filter((v) => v.lists.includes(id));
+      const tabs = [{ id: "__new", title: "الأحدث" }, ...cats.filter((c) => inCat(c.id).length)];
+      let curCat = "__new";
+      if (tabs.length > 1) {
+        T.hidden = false;
+        tabs.forEach((c) => { const b = el("button", "mv-cat"); b.type = "button"; b.setAttribute("role", "tab"); b.dataset.id = c.id;
+          const list = inCat(c.id), cover = (list.find((v) => v.yt) || {}).yt;
+          b.innerHTML = '<span class="mc-ic">' + (c.id === "__new" ? NEWIC : LISTIC) + '</span><span class="mc-t"><b>' + esc(c.title) + "</b><small>" + clips(list.length) + "</small></span>" + (cover ? '<span class="mc-th"><img loading="lazy" alt="" onerror="this.remove()" src="' + thumb(cover, "mqdefault") + '"></span>' : "");
+          b.onclick = () => { curCat = c.id; paint(); b.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" }); };
+          T.appendChild(b); });
+      }
+
+      const screen = $("mvScreen"), info = $("mvInfo"), side = $("mvList");
+      let list = [], cur = 0;
+      function paintMain(play) {
+        const v = list[cur]; if (!v) return;
+        screen.innerHTML = play
+          ? '<iframe src="' + embed(v.yt) + '" title="' + esc(v.title) + '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'
+          : '<button type="button" class="mv-poster" aria-label="تشغيل: ' + esc(v.title) + '"><img alt="" onerror="this.style.opacity=0" src="' + thumb(v.yt, "hqdefault") + '"><span class="mv-beam"></span><span class="mv-play">' + PLAY + "</span>" + (v.dur ? '<span class="mv-dur" dir="ltr">' + dur(v.dur) + "</span>" : "") + (isNewV(v) ? '<span class="mv-now">جديد</span>' : "") + "</button>";
+        if (!play) screen.querySelector(".mv-poster").onclick = () => paintMain(true);
+        const bk = byId.get(v.book), catT = v.lists.map((id) => (cats.find((c) => c.id === id) || {}).title).filter((t) => t && t !== "متنوعة");
+        info.innerHTML = (catT.length ? '<span class="mv-src">' + esc(catT.join(" • ")) + "</span>" : v.src ? '<span class="mv-src">' + esc(v.src) + "</span>" : "") + (v.date ? '<span class="mv-when">' + esc(ago(v.date)) + "</span>" : "") + "<h3>" + esc(v.title) + "</h3>" + (v.sub ? '<p class="mv-sub">' + esc(v.sub) + "</p>" : "") +
+          (bk ? '<a class="mv-book" href="' + readerUrl(bk) + '"><img alt="" src="' + esc(bk.cover) + '"><span><small>الكتاب متاح في المكتبة</small><b>' + esc(bk.title) + "</b></span><em>اقرأ الكتاب ←</em></a>" : "") +
+          '<a class="mv-yt" href="https://www.youtube.com/watch?v=' + encodeURIComponent(v.yt) + '" target="_blank" rel="noopener">على يوتيوب ↗</a>';
+        side.querySelectorAll(".mv-it").forEach((b, i) => { b.classList.toggle("on", i === cur); b.setAttribute("aria-current", i === cur ? "true" : "false"); });
+      }
+      function paintList() {
+        side.innerHTML = "";
+        list.forEach((v, i) => {
+          const b = el("button", "mv-it"); b.type = "button";
+          b.innerHTML = '<span class="mv-n" dir="ltr">' + en(i + 1) + '</span><span class="mv-th"><img loading="lazy" alt="" onerror="this.style.opacity=0" src="' + thumb(v.yt, "mqdefault") + '">' + (v.dur ? '<i dir="ltr">' + dur(v.dur) + "</i>" : "") + '<span class="mv-eq"><s></s><s></s><s></s></span></span><span class="mv-tt"><b>' + esc(v.title) + "</b><small>" + (isNewV(v) ? '<em class="mv-new">جديد</em> ' : "") + esc(v.date ? ago(v.date) : v.sub || v.src || "") + "</small>" + (byId.has(v.book) ? "<em>📖 مرتبط بكتاب</em>" : "") + "</span>";
+          b.onclick = () => { cur = i; paintMain(true); if (innerWidth < 1000) screen.scrollIntoView({ behavior: "smooth", block: "center" }); };
+          side.appendChild(b);
+        });
+        $("mvStage").classList.toggle("solo", list.length < 2);
+      }
+      function paint() {
+        T.querySelectorAll(".mv-cat").forEach((b) => { const on = b.dataset.id === curCat; b.classList.toggle("on", on); b.setAttribute("aria-selected", on ? "true" : "false"); });
+        const vs = inCat(curCat), longs = vs.filter((v) => v.yt && !v.short), shorts = vs.filter((v) => v.short || v.x);
+        list = longs; cur = 0; $("mvStage").hidden = !longs.length;
+        if (longs.length) { paintList(); paintMain(false); } else { screen.innerHTML = ""; side.innerHTML = ""; }
+        const R = $("mvReels"); R.innerHTML = ""; $("mvReelsWrap").hidden = !shorts.length;
+        $("mvReelsWrap").querySelector(".mv-h3").textContent = longs.length ? "مقاطع قصيرة" : "";
+        $("mvReelsWrap").classList.toggle("only", !longs.length);
+        shorts.forEach((v) => { const b = el(v.x ? "a" : "button", "mv-reel" + (v.x ? " is-x" : ""));
+          // مقاطع X: المنصة تمنع تضمين المنشورات الموسومة «محتوى حساس»، فالبطاقة تفتح المنشور في X مباشرة
+          if (v.x) { b.href = xUrl(v); b.target = "_blank"; b.rel = "noopener"; b.setAttribute("aria-label", v.title + " — يفتح في منصة X"); }
+          else { b.type = "button"; b.setAttribute("aria-label", "تشغيل: " + v.title); b.onclick = () => openModal(v); }
+          const art = v.x ? '<span class="mv-xart">' + IC.x + (site.nameArt ? '<span class="mc-name" style="--na:url(&quot;' + esc(new URL(site.nameArt, location.href).href) + '&quot;)"></span>' : "") + "</span>" : '<img loading="lazy" alt="" onerror="this.style.opacity=0" src="' + thumb(v.yt, "hqdefault") + '">';
+          b.innerHTML = art + '<span class="mv-badge">' + (v.x ? IC.x + "يفتح في منصة X ↗" : isNewV(v) ? "جديد" : IC.youtube + "مقطع قصير") + '</span><span class="mv-play sm">' + PLAY + "</span><b>" + esc(v.title) + "</b>";
+          R.appendChild(b); });
+      }
+      paint();
+    })();
   })();
 })();
 </script>

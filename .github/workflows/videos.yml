@@ -1,0 +1,26 @@
+name: تحديث المرئيات من يوتيوب
+on:
+  schedule:
+    - cron: "41 */3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  videos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: جلب مقاطع القناة وقوائم التشغيل
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+        run: python3 tools/update_videos.py
+      - name: حفظ الملف
+        run: |
+          if [ -n "$(git status --porcelain videos.json)" ]; then
+            git config user.name "videos-bot"
+            git config user.email "videos-bot@users.noreply.github.com"
+            git add videos.json
+            git commit -m "تحديث المرئيات من يوتيوب"
+            git pull --rebase origin main
+            git push
+          fi
