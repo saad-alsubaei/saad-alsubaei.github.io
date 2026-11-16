@@ -609,7 +609,7 @@
 .g-site .frame .cv img,.g-site .frame .cv canvas{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;display:block}
 @media (max-width:640px){.g-site .frame{padding:6px}}
 
-/* ===== حسابات الشيخ (site.social) — v41 ===== */
+/* ===== حسابات الدكتور (site.social) — v41 ===== */
 .hsocial{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin-top:18px}
 .hsocial[hidden]{display:none}
 .hs-l{font-size:13.5px;font-weight:600;color:var(--t-hero-eyebrow,var(--gold-l));margin-inline-end:4px}
@@ -628,7 +628,7 @@
 @media (max-width:860px){.foot-in.has-soc{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.foot-in.has-soc{grid-template-columns:1fr}.foot-soc ul{justify-items:center}}
 
-/* ===== مرئيات الشيخ (videos) — v41: مسرح عرض + قائمة تشغيل + مقاطع قصيرة + بطاقة القناة ===== */
+/* ===== مرئيات الدكتور (videos) — v41: مسرح عرض + قائمة تشغيل + مقاطع قصيرة + بطاقة القناة ===== */
 .mv{position:relative;isolation:isolate;overflow:hidden;margin:56px 0 0;padding:64px 0 70px;color:#fff;background:linear-gradient(165deg,var(--t-primary-l) 0%,var(--t-primary-d) 48%,var(--t-primary-dd) 100%)}
 .mv[hidden]{display:none}
 .mv>.pat{position:absolute;inset:0;z-index:-1;background:var(--t-pat);opacity:.55}
@@ -793,7 +793,7 @@ body.vm-open{overflow:hidden}
 .vm-cap a{margin-inline-start:auto;color:#fff;background:rgb(255 255 255 / .14);border:1px solid rgb(255 255 255 / .3);padding:6px 14px;border-radius:999px;text-decoration:none;font-weight:600}
 .vm-box.tw .vm-frame{height:min(74vh,700px)}
 a.mv-reel{display:block;text-decoration:none}
-/* أيقونات «تابع الشيخ» بدائرة ملوّنة واضحة (v55): في الفاتحة دائرة بلون الأساسي ورمز أبيض، وفي الداكنة دائرة بالمميز */
+/* أيقونات «تابع الدكتور» بدائرة ملوّنة واضحة (v55): في الفاتحة دائرة بلون الأساسي ورمز أبيض، وفي الداكنة دائرة بالمميز */
 .hs-a{padding:5px 8px 5px 16px;gap:9px;font-weight:700;color:var(--t-hero-title,#fff)}
 .hs-a svg{box-sizing:border-box;width:30px;height:30px;padding:6px;border-radius:50%;background:var(--t-hero-num,var(--gold-l));color:var(--t-hero-ic,var(--t-hero-box-bg,var(--t-primary-dd)));transition:transform .25s,background .2s}
 .hs-a:hover{background:var(--t-hero-num,var(--gold-l));border-color:var(--t-hero-num,var(--gold-l));color:var(--t-hero-ic,var(--t-hero-box-bg,var(--t-primary-dd)))}
