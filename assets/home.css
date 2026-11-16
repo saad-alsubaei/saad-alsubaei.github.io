@@ -788,3 +788,7 @@ body.vm-open{overflow:hidden}
 .mv-xart>svg{margin-top:-46%}
 @media (max-width:999px){.mv-channel.with-reels{grid-template-columns:minmax(0,1fr)}.with-reels .mv-reels{grid-auto-columns:minmax(200px,240px);padding-bottom:8px}}
 @media (max-width:640px){.with-reels .mv-reels{grid-auto-columns:46%;gap:10px}.mv-reel b{font-size:12.5px;inset:auto 10px 10px}.mv-badge{font-size:10.5px;top:8px;right:8px}}
+.vm-cap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;color:#fff;margin-top:12px;font-size:14px}
+.vm-cap b{font-family:var(--display);font-size:18px;font-weight:700}
+.vm-cap a{margin-inline-start:auto;color:#fff;background:rgb(255 255 255 / .14);border:1px solid rgb(255 255 255 / .3);padding:6px 14px;border-radius:999px;text-decoration:none;font-weight:600}
+.vm-box.tw .vm-frame{height:min(74vh,700px)}
