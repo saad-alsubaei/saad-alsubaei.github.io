@@ -17,7 +17,7 @@
 <script>try{var _t=localStorage.getItem("lib-theme:"+location.pathname.replace(/[^/]*$/,""));if(_t){var _s=document.getElementById("lib-theme")||document.createElement("style");_s.id="lib-theme";_s.textContent=_t;if(!_s.parentNode)document.head.appendChild(_s)}}catch(e){}</script>
 <link rel="stylesheet" href="assets/style.css?v=43">
 <link rel="stylesheet" href="assets/home.css?v=58">
-<link rel="stylesheet" href="assets/fawaid.css?v=1">
+<link rel="stylesheet" href="assets/fawaid.css?v=3">
 </head>
 <body class="home fw-page">
 <header class="topbar" id="topbar">
@@ -49,7 +49,7 @@
     </div>
     <button type="button" class="fw-today" id="fwToday" hidden aria-label="فائدة اليوم">
       <span class="fw-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg>فائدة اليوم</span>
-      <span class="fw-stack"></span><span class="fw-frame"><img id="fwTodayImg" alt=""></span>
+      <span class="fw-stack"></span><span class="fw-frame"><span class="fw-ph" id="fwTodayPh"><img id="fwTodayImg" alt=""></span></span>
     </button>
   </div>
 </section>
@@ -129,7 +129,7 @@
   // فائدة اليوم: تتغير يومياً بحسب التاريخ (بلا تدخل)
   if (items.length) {
     const day = Math.floor((Date.now() + 3 * 3600000) / 86400000), t = items[day % items.length];
-    $("fwTodayImg").src = t.img; $("fwTodayImg").alt = t.title || ""; $("fwToday").hidden = false; $("fwToday").onclick = () => openAt(t.id);
+    $("fwTodayPh").style.setProperty("--fw-bg", `url("${new URL(t.thumb || t.img, location.href).href}")`); $("fwTodayImg").src = t.img; $("fwTodayImg").alt = t.title || ""; $("fwToday").hidden = false; $("fwToday").onclick = () => openAt(t.id);
   }
 
   // التصنيفات
@@ -148,7 +148,7 @@
     const g = $("fwGrid"); g.replaceChildren();
     view.forEach((x) => {
       const b = el("button", "fw-card"); b.type = "button"; b.setAttribute("aria-label", x.title || "فائدة");
-      const ph = el("span", "fw-ph"); ph.style.aspectRatio = (x.w && x.h) ? x.w + "/" + x.h : "1";
+      const ph = el("span", "fw-ph"); ph.style.setProperty("--fw-bg", `url("${new URL(x.thumb || x.img, location.href).href}")`);
       const im = el("img"); im.loading = "lazy"; im.decoding = "async"; im.alt = (x.title || "") + (x.text ? " — " + x.text : ""); im.src = x.thumb || x.img; ph.appendChild(im);
       if (isNew(x)) ph.appendChild(el("span", "fw-new", "جديد"));
       const cap = el("span", "fw-cap"); cap.appendChild(el("b", "", x.title || "")); if (x.cat) cap.appendChild(el("small", "", x.cat));

@@ -32,7 +32,7 @@
 <script>try{var _t=localStorage.getItem("lib-theme:"+location.pathname.replace(/[^/]*$/,""));if(_t){var _s=document.getElementById("lib-theme")||document.createElement("style");_s.id="lib-theme";_s.textContent=_t;if(!_s.parentNode)document.head.appendChild(_s)}}catch(e){}</script>
 <link rel="stylesheet" href="assets/style.css?v=43">
 <link rel="stylesheet" href="assets/home.css?v=58">
-<link rel="stylesheet" href="assets/fawaid.css?v=1">
+<link rel="stylesheet" href="assets/fawaid.css?v=3">
 </head>
 <body class="home">
 <div class="datebar" id="today" aria-label="تاريخ اليوم"></div>
@@ -131,7 +131,7 @@
      بلا مقاطع: بطاقة القناة (يوتيوب/تيليجرام/X). short:true ← رف «مقاطع قصيرة» عمودي. list ← تبويبات (دروس، محاضرات…). book ← زر «اقرأ الكتاب». -->
 <!-- الفوائد العلمية (fawaid.json): فائدة اليوم + آخر البطاقات، والصفحة الكاملة fawaid.html -->
 <section class="fwh" id="fwh" hidden aria-labelledby="fwhH"><div class="wrap"><div class="fwh-in">
-  <a class="fwh-today" id="fwhToday" href="fawaid.html"><span class="fw-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg>فائدة اليوم</span><img id="fwhImg" alt="" loading="lazy"></a>
+  <a class="fwh-today" id="fwhToday" href="fawaid.html"><span class="fw-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg>فائدة اليوم</span><span class="fw-ph" id="fwhPh"><img id="fwhImg" alt="" loading="lazy"></span></a>
   <div style="min-width:0">
     <div class="fwh-head"><div><span class="fwh-kick">من فوائد الدكتور</span><h2 id="fwhH">الفوائد العلمية</h2><p id="fwhSub">بطاقات علمية مختصرة، تُقرأ في دقيقة وتُشارك بضغطة.</p></div><a class="fwh-all" href="fawaid.html">عرض كل الفوائد ←</a></div>
     <div class="fwh-strip" id="fwhStrip"></div>
@@ -832,12 +832,12 @@
       const r = await fetch("fawaid.json?t=" + Math.floor(Date.now() / 600000), { cache: "no-cache" }); if (!r.ok) return;
       const fw = await r.json(), items = (fw.items || []).filter((x) => x && x.id && x.img); if (!items.length) return;
       const day = Math.floor((Date.now() + 3 * 3600000) / 86400000), t = items[day % items.length];
-      $("fwhImg").src = t.img; $("fwhImg").alt = t.title || ""; $("fwhToday").href = "fawaid.html?f=" + encodeURIComponent(t.id);
+      $("fwhPh").style.setProperty("--fw-bg", `url("${new URL(t.thumb || t.img, location.href).href}")`); $("fwhImg").src = t.img; $("fwhImg").alt = t.title || ""; $("fwhToday").href = "fawaid.html?f=" + encodeURIComponent(t.id);
       if (Lib.WORDS && !Lib.WORDS.card) Lib.WORDS.card = ["بطاقة", "بطاقتان", "بطاقات", "بطاقةً", "بطاقة"];
       $("fwhSub").textContent = en(items.length) + " " + plural(items.length, "card") + " علمية مختصرة، تُقرأ في دقيقة وتُشارك بضغطة.";
       const st = $("fwhStrip");
       items.slice(0, 10).forEach((x) => { const a = el("a"); a.href = "fawaid.html?f=" + encodeURIComponent(x.id); a.setAttribute("aria-label", x.title || "فائدة");
-        const im = el("img"); im.loading = "lazy"; im.alt = x.title || ""; im.src = x.thumb || x.img; a.appendChild(im); st.appendChild(a); });
+        const ph = el("span", "fw-ph"); ph.style.setProperty("--fw-bg", `url("${new URL(x.thumb || x.img, location.href).href}")`); const im = el("img"); im.loading = "lazy"; im.alt = x.title || ""; im.src = x.thumb || x.img; ph.appendChild(im); a.appendChild(ph); st.appendChild(a); });
       if (items.length > 10) { const m = el("a", "more", "عرض " + en(items.length - 10) + " فائدة أخرى ←"); m.href = "fawaid.html"; st.appendChild(m); }
       $("fwh").hidden = false; $("navFw").hidden = false;
     } catch (e) {}
