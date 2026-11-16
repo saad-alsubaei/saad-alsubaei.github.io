@@ -793,3 +793,12 @@ body.vm-open{overflow:hidden}
 .vm-cap a{margin-inline-start:auto;color:#fff;background:rgb(255 255 255 / .14);border:1px solid rgb(255 255 255 / .3);padding:6px 14px;border-radius:999px;text-decoration:none;font-weight:600}
 .vm-box.tw .vm-frame{height:min(74vh,700px)}
 a.mv-reel{display:block;text-decoration:none}
+/* أيقونات «تابع الشيخ» بدائرة ملوّنة واضحة (v55): في الفاتحة دائرة بلون الأساسي ورمز أبيض، وفي الداكنة دائرة بالمميز */
+.hs-a{padding:5px 8px 5px 16px;gap:9px;font-weight:700;color:var(--t-hero-title,#fff)}
+.hs-a svg{box-sizing:border-box;width:30px;height:30px;padding:6px;border-radius:50%;background:var(--t-hero-num,var(--gold-l));color:var(--t-hero-ic,var(--t-hero-box-bg,var(--t-primary-dd)));transition:transform .25s,background .2s}
+.hs-a:hover{background:var(--t-hero-num,var(--gold-l));border-color:var(--t-hero-num,var(--gold-l));color:var(--t-hero-ic,var(--t-hero-box-bg,var(--t-primary-dd)))}
+.hs-a:hover svg{transform:scale(1.08) rotate(-6deg);background:rgb(255 255 255 / .22);color:inherit}
+.hs-l{display:inline-flex;align-items:center;gap:8px;color:var(--t-hero-eyebrow,var(--gold-l));font-weight:700}
+.hs-l::before{content:"";width:22px;height:1.5px;background:currentColor;opacity:.6}
+@media (max-width:520px){.hs-a{padding:4px 6px 4px 12px}.hs-a svg{width:28px;height:28px}.hs-l::before{display:none}}
+@media (max-width:520px){.hs-l{justify-content:center}}

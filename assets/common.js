@@ -136,7 +136,7 @@
       "head": toHex(Hd),
       "hero-bg": `radial-gradient(ellipse 55% 70% at 12% 20%,rgb(255 255 255 / .9),transparent 70%),radial-gradient(ellipse 50% 60% at 92% 85%,rgb(${rgb(A)} / .28),transparent 70%),linear-gradient(180deg,${toHex(snow)} 0%,${toHex(mix(snow, WHITE, 0.5))} 100%)`,
       "hero-fg": toHex(Hd), "hero-title": toHex(Hd), "hero-text": toHex(mix(Hd, B, 0.22)), "hero-eyebrow": toHex(P0),
-      "hero-box-bg": "rgb(255 255 255 / .78)", "hero-box-bd": `rgb(${rgb(A)} / .55)`, "hero-num": toHex(P),
+      "hero-box-bg": "rgb(255 255 255 / .78)", "hero-ic": "#fff", "hero-box-bd": `rgb(${rgb(A)} / .55)`, "hero-num": toHex(P),
       "hero-glow": `rgb(255 255 255 / .7)`, "hero-edge": cloud, "hero-edge-h": "64px",
       "shade-rgb": rgb(shade), "bar-rgb": "255 255 255", "datebar": toHex(Hd), "pat": air, "pat-op": ".9",
       "frame": "#ffffff", "frame-2": "#ffffff", "frame-h": "#ffffff", "frame-h2": toHex(mix(B, WHITE, 0.4)),
