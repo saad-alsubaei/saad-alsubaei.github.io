@@ -1,12 +1,17 @@
 {
- "updated": "2026-11-16T18:13Z",
- "total": 11,
- "last28": 11,
+ "updated": "2026-11-16T19:17Z",
+ "total": 12,
+ "last28": 12,
  "countries": [
   {
    "code": "SA",
    "name": "Saudi Arabia",
    "count": 9
+  },
+  {
+   "code": "GT",
+   "name": "Guatemala",
+   "count": 1
   },
   {
    "code": "NL",
