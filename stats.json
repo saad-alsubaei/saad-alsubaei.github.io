@@ -1,6 +1,12 @@
 {
- "updated": "",
+ "updated": "2026-11-16T13:53Z",
  "total": 0,
- "last28": 0,
- "countries": []
+ "last28": 1,
+ "countries": [
+  {
+   "code": "NL",
+   "name": "Netherlands",
+   "count": 1
+  }
+ ]
 }
