@@ -16,11 +16,23 @@ PRIMARY, ACCENT, BG = th.get("primary", "#164e3b"), th.get("accent", "#c6a15b"),
 
 title, author = site.get("title", "").strip(), site.get("author", "").strip()
 # الاسم الكامل كما يظهر في رأس الموقع (brandTitle + brandSub)
-NAME = " ".join(x for x in [(site.get("brandTitle") or title).strip(), (site.get("brandSub") or author).strip()] if x) or "المكتبة الرقمية"
+FULL = " ".join(x for x in [(site.get("brandTitle") or title).strip(), (site.get("brandSub") or author).strip()] if x) or "المكتبة الرقمية"
+def short_person(n):
+    # «د. سعد بن ضيدان السبيعي» ← «د. سعد السبيعي»: اللقب + الاسم الأول + اسم العائلة فقط
+    n = re.sub(r"\s+", " ", re.sub(r"أ\.\s*د\.", "أ.د.", re.sub(r"(د|أ|م)\.\s*", r"\1. ", n or ""))).strip()
+    m = re.match(r"^((?:أ\.د\.|د\.|أ\.|م\.|الأستاذ الدكتور|الدكتور|الشيخ|الأستاذ|فضيلة الشيخ)\s+)?(.*)$", n)
+    hon, rest = (m.group(1) or "").strip(), re.sub(r"^(عبد|أبو|أبي) (\S+)", "\\1~\\2", m.group(2)).split()
+    if not rest: return n
+    core = rest[0] if len(rest) == 1 else rest[0] + " " + rest[-1]
+    if len(rest) >= 2 and rest[-2] in ("آل", "ابن", "بن", "أبو", "أبا", "ال"): core = rest[0] + " " + rest[-2] + " " + rest[-1]
+    return (hon + " " + core).replace("~", " ").strip()
+PERSON = short_person(site.get("authorName") or site.get("brandSub") or author)
+# الاسم: «المكتبة الرقمية - د. سعد السبيعي» (يمكن تخصيصه بـ site.appName)
+NAME = (site.get("appName") or "").strip() or ("المكتبة الرقمية - " + PERSON if PERSON else FULL)
 SHORT = (site.get("appShortName") or "").strip()
 if not SHORT:  # اسم قصير ≤ 12 حرفاً يظهر تحت الأيقونة
     last = (site.get("authorName") or author or NAME).split()[-1] if (site.get("authorName") or author or NAME).split() else "المكتبة"
-    for cand in ["د. " + last if re.search(r"(^|\s)(د\.|الدكتور)", NAME) else "", "مكتبة " + last, last, "المكتبة"]:
+    for cand in [PERSON, "د. " + last if re.search(r"(^|\s)(د\.|الدكتور)", PERSON) else "", "مكتبة " + last, last, "المكتبة"]:
         if cand and len(cand) <= 12: SHORT = cand; break
 assert len(SHORT) <= 12, SHORT
 
@@ -55,7 +67,7 @@ except Exception as ex:
 
 manifest = {
     "id": "./", "name": NAME, "short_name": SHORT,
-    "description": site.get("shareDescription") or ("مكتبة رقمية مجانية: " + NAME + "، تُقرأ بتقليب الصفحات كالكتاب المطبوع."),
+    "description": site.get("shareDescription") or ("مكتبة رقمية مجانية: " + FULL + "، تُقرأ بتقليب الصفحات كالكتاب المطبوع."),
     "lang": "ar", "dir": "rtl", "start_url": "./", "scope": "./", "display": "standalone",
     "orientation": "any", "theme_color": PRIMARY, "background_color": PRIMARY, "categories": ["books", "education"],
     "icons": [
