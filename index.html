@@ -902,7 +902,13 @@
       $("mvSub").textContent = "دروس الدكتور ومحاضراته مصنّفة في مجموعات، تُشاهَد هنا داخل المكتبة، وتُضاف الجديدة تلقائياً.";
 
       // شريط التصنيفات: «الأحدث» + قوائم التشغيل
-      const T = $("mvTabs"), inCat = (id) => id === "__new" ? all : all.filter((v) => v.lists.includes(id));
+      // داخل التصنيف: بترتيب قائمة التشغيل (pos)، وإلا برقم الحلقة في العنوان، وإلا الأقدم أولاً — «الأحدث» يبقى الأحدث أولاً
+      const epNum = (t) => { const m = String(t || "").replace(/[٠-٩]/g, (d) => "٠١٢٣٤٥٦٧٨٩".indexOf(d)).match(/^\s*(?:الدرس|الحلقة|المجلس|اللقاء)?\s*\(?(\d{1,4})\)?\s*[-–ـ:.)]/) || String(t || "").match(/(?:الدرس|الحلقة|المجلس|اللقاء|الجزء)\s*\(?(\d{1,4})/); return m ? +m[1] : null; };
+      const byOrder = (id) => (a, b) => { const pa = a.pos && a.pos[id], pb = b.pos && b.pos[id];
+        if (pa != null && pb != null) return pa - pb;
+        const na = epNum(a.title), nb = epNum(b.title); if (na != null && nb != null && na !== nb) return na - nb;
+        return (a.date || "").localeCompare(b.date || ""); };
+      const T = $("mvTabs"), inCat = (id) => id === "__new" ? all : all.filter((v) => v.lists.includes(id)).sort(byOrder(id));
       const tabs = [{ id: "__new", title: "الأحدث" }, ...cats.filter((c) => inCat(c.id).length)];
       let curCat = "__new";
       if (tabs.length > 1) {

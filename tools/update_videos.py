@@ -57,16 +57,17 @@ oldv = {v["yt"]: v for v in old.get("videos", [])}
 
 videos, lists = {}, []
 
-def add(vid, title, date, lid=None, dur=None):
+def add(vid, title, date, lid=None, dur=None, pos=None):
     v = videos.get(vid)
     if v is None:
         v = dict(oldv.get(vid, {}), yt=vid)
-        if KEY: v["lists"] = []  # مع المفتاح نعرف عضوية القوائم كاملة، فنبدأ من جديد
+        if KEY: v["lists"] = []; v.pop("pos", None)  # مع المفتاح نعرف عضوية القوائم وترتيبها كاملة، فنبدأ من جديد
     v["title"] = title or v.get("title", "")
     if date: v["date"] = date[:10]
     if dur is not None: v["dur"] = dur
     v.setdefault("lists", [])
     if lid and lid not in v["lists"]: v["lists"].append(lid)
+    if lid and pos is not None: v.setdefault("pos", {})[lid] = pos
     videos[vid] = v
 
 def iso_dur(s):
@@ -91,7 +92,7 @@ if KEY:
             for it in r.get("items", []):
                 sn = it["snippet"]; vid = it["contentDetails"].get("videoId")
                 if not vid or sn.get("title") in ("Private video", "Deleted video"): continue
-                add(vid, sn.get("title", "").strip(), it["contentDetails"].get("videoPublishedAt") or sn.get("publishedAt", ""), lid)
+                add(vid, sn.get("title", "").strip(), it["contentDetails"].get("videoPublishedAt") or sn.get("publishedAt", ""), lid, pos=sn.get("position") if lid else None)
             tok = r.get("nextPageToken") or ""
             if not tok: break
     items(uploads, None)
@@ -164,7 +165,7 @@ for l in lists:
     l["count"] = sum(1 for v in videos.values() if l["id"] in v["lists"])
 
 vs = sorted(videos.values(), key=lambda v: v.get("date", ""), reverse=True)
-data = {"channel": cid, "lists": lists, "videos": [{k: v[k] for k in ("yt", "title", "date", "dur", "short", "lists") if k in v and v[k] not in (None, "")} for v in vs]}
+data = {"channel": cid, "lists": lists, "videos": [{k: v[k] for k in ("yt", "title", "date", "dur", "short", "lists", "pos") if k in v and v[k] not in (None, "")} for v in vs]}
 if {k: data[k] for k in ("lists", "videos")} == {k: old.get(k) for k in ("lists", "videos")}:
     print("لا تغيير"); sys.exit(0)
 data["updated"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
