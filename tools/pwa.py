@@ -26,6 +26,11 @@ assert len(SHORT) <= 12, SHORT
 
 MARK = ('<path d="M10 22c8-3.5 15-2.5 22 2.5v27c-7-5-14-6-22-2.5z M54 22c-8-3.5-15-2.5-22 2.5v27c7-5 14-6 22-2.5z" fill="{a}"/>'
         '<path d="M32 7l2.4 4.9 5.4.8-3.9 3.8.9 5.4L32 19.4l-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z" fill="{b}"/>').format(a=ACCENT, b=BG)
+# إن كان شعار رأس الموقع مختلفاً في هذه المكتبة نأخذه منه كما هو (بألوان الهوية)
+_m = re.search(r'class="brand-mark"><svg viewBox="0 0 64 64"[^>]*>(.*?)</svg>', (ROOT / "index.html").read_text(encoding="utf-8"), re.S)
+if _m:
+    MARK = (_m.group(1).replace('style="fill:var(--t-accent)"', f'fill="{ACCENT}"').replace('style="fill:var(--t-bg)"', f'fill="{BG}"')
+            .replace('style="fill:var(--t-primary)"', f'fill="{PRIMARY}"'))
 
 def svg(size, scale):
     # الشعار في المنتصف؛ scale = نسبة عرض الشعار من الأيقونة (الشعار يشغل 44×45 من 64)
