@@ -879,3 +879,9 @@ a.mv-reel{display:block;text-decoration:none}
   .mv-cat .mc-th{display:block;width:60%}
   .mv-cat .mc-t b{font-size:13.5px;line-height:1.45}
 }
+/* v62: بطاقات الكتب موحّدة الارتفاع — العنوان يحجز ٣ أسطر دائماً (ويُقصّ بعدها)، فتتساوى الأغلفة والصفوف */
+.card{display:flex;flex-direction:column}
+.card h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(1.65em * 3)}
+.g-site .card h3{min-height:calc(1.7em * 3)}
+@media (max-width:640px){.card h3{min-height:calc(1.6em * 3)}.g-site .card h3{min-height:calc(1.65em * 3)}}
+.card .meta{margin-top:auto}
