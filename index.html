@@ -31,7 +31,7 @@
 <!-- THEME:START (يُولَّد تلقائياً: python3 tools/configure.py) --><style id="lib-theme">:root:root{--t-primary:#1e4e8c;--t-primary-rgb:30 78 140;--t-primary-l:#2c5993;--t-primary-2:#173b69;--t-primary-2-rgb:23 59 105;--t-primary-d:#13325a;--t-primary-d-rgb:19 50 90;--t-primary-dd:#0e2543;--t-primary-dd-rgb:14 37 67;--t-stage:#0c1f38;--t-stage-rgb:12 31 56;--t-sheet:#0f2542;--t-zoom:#0a192d;--t-annbar-rgb:15 39 70;--t-accent:#bfd3ee;--t-accent-rgb:191 211 238;--t-accent-2-rgb:191 211 238;--t-accent-m:#a2b3ca;--t-accent-text:#1e4e8c;--t-bg:#f5f7fa;--t-bg-rgb:245 247 250;--t-bg-2:#ebf1f8;--t-card:#fcfdfe;--t-soft:#eef2f8;--t-line:#e4ebf6;--t-line-2:#e0e6f0;--t-ink:#16325c;--t-ink-rgb:22 50 92;--t-muted:#596d8b;--t-muted-2:#607390;--t-on-dark-2:#ebf1f8;--t-on-dark-3:#f0f3f9;--t-placeholder:#7a8ba3;--t-chip:#eceff4;--t-chip-h:#eaf0f8;--t-tint:#ebf1f8;--t-tint-2:#f2f5f9;--t-pg:#fafbfc;--t-pg-2:#f0f3f9;--t-pg-ink:#b6c6dc;--t-fan:#ffffff;--t-line-h:#cddcf1;--t-line-h2:#d0dbea;--t-frame:#ffffff;--t-frame-2:#ffffff;--t-frame-h:#ffffff;--t-frame-h2:#f9fafc;--t-dot:#a9b8ce;--t-highlight:#c8323c;--t-pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='160' viewBox='0 0 360 160'%3E%3Cg fill='none' stroke='%231e4e8c' stroke-linecap='round' stroke-opacity='.16'%3E%3Cpath stroke-width='1.1' d='M-10 42c40-18 80-18 120 0s80 18 120 0 80-18 140 0'/%3E%3Cpath stroke-width='.8' d='M-10 58c40-14 80-14 120 0s80 14 120 0 80-14 140 0'/%3E%3Cpath stroke-width='.7' d='M30 118c26-10 52-10 78 0s52 10 78 0'/%3E%3Cpath stroke-width='.7' d='M200 132c22-8 44-8 66 0s44 8 66 0'/%3E%3C/g%3E%3C/svg%3E");--t-head:#16325c;--t-hero-bg:radial-gradient(ellipse 55% 70% at 12% 20%,rgb(255 255 255 / .9),transparent 70%),radial-gradient(ellipse 50% 60% at 92% 85%,rgb(191 211 238 / .28),transparent 70%),linear-gradient(180deg,#edf2f8 0%,#f6f8fc 100%);--t-hero-fg:#16325c;--t-hero-title:#16325c;--t-hero-text:#475d7f;--t-hero-eyebrow:#1e4e8c;--t-hero-box-bg:rgb(255 255 255 / .78);--t-hero-ic:#fff;--t-hero-box-bd:rgb(191 211 238 / .55);--t-hero-num:#1e4e8c;--t-hero-glow:rgb(255 255 255 / .7);--t-hero-edge:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath fill='%23f5f7fa' fill-opacity='.55' d='M0 70c90-38 170-40 250-14 60-34 150-42 230-6 80-40 190-40 270 4 70-30 160-34 230 0 80-36 190-38 280 2 60-20 120-22 180-4V120H0z'/%3E%3Cpath fill='%23f5f7fa' d='M0 96c110-26 200-24 290-4 90-26 190-26 280 2 100-26 200-24 300 0 90-24 190-24 290 0 90-20 190-22 280-6V120H0z'/%3E%3C/svg%3E");--t-hero-edge-h:64px;--t-shade-rgb:14 35 63;--t-bar-rgb:255 255 255;--t-datebar:#16325c;--t-pat-op:.9;--t-frame-sh:0 0 0 1px rgb(191 211 238 / .45),0 10px 24px -18px rgb(14 35 63 / .45);--t-frame-sh-h:0 0 0 1px rgb(191 211 238 / .9),0 16px 30px -18px rgb(14 35 63 / .5);--t-card-sh:0 10px 30px -24px rgb(14 35 63 / .6);--t-wa:#1e4e8c;--t-wa-rgb:30 78 140;--t-live:#bfd3ee;--t-live-rgb:191 211 238}</style><!-- THEME:END -->
 <script>try{var _t=localStorage.getItem("lib-theme:"+location.pathname.replace(/[^/]*$/,""));if(_t){var _s=document.getElementById("lib-theme")||document.createElement("style");_s.id="lib-theme";_s.textContent=_t;if(!_s.parentNode)document.head.appendChild(_s)}}catch(e){}</script>
 <link rel="stylesheet" href="assets/style.css?v=43">
-<link rel="stylesheet" href="assets/home.css?v=59">
+<link rel="stylesheet" href="assets/home.css?v=60">
 <link rel="stylesheet" href="assets/fawaid.css?v=4">
 </head>
 <body class="home">
@@ -149,7 +149,11 @@
       </div>
       <div class="mv-links" id="mvLinks"></div>
     </div>
-    <div class="mv-tabs" id="mvTabs" role="tablist" hidden></div>
+    <div class="mv-rail" id="mvRail" hidden>
+      <button type="button" class="mv-arr prev" id="mvPrev" aria-label="التصنيفات السابقة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+      <div class="mv-tabs" id="mvTabs" role="tablist" hidden></div>
+      <button type="button" class="mv-arr next" id="mvNext" aria-label="التصنيفات التالية"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+    </div>
     <div class="mv-stage" id="mvStage" hidden>
       <div class="mv-main">
         <div class="mv-screen" id="mvScreen"></div>
@@ -951,6 +955,23 @@
           R.appendChild(b); });
       }
       paint();
+      // شريط التصنيفات: سحب بالماوس يميناً ويساراً + سهمان للتنقل (اللمس يسحب طبيعياً)
+      if (!T.hidden) {
+        const rail = $("mvRail"), pv = $("mvPrev"), nx = $("mvNext"); rail.hidden = false;
+        const maxS = () => T.scrollWidth - T.clientWidth;
+        const upd = () => { const x = Math.abs(T.scrollLeft), m = maxS(); rail.classList.toggle("can-scroll", m > 4);
+          pv.disabled = x <= 2; nx.disabled = x >= m - 2; rail.classList.toggle("at-start", x <= 2); rail.classList.toggle("at-end", x >= m - 2); };
+        const step = () => Math.max(220, T.clientWidth * 0.75);
+        pv.onclick = () => T.scrollBy({ left: step(), behavior: "smooth" });   // RTL: البداية يميناً
+        nx.onclick = () => T.scrollBy({ left: -step(), behavior: "smooth" });
+        T.addEventListener("scroll", upd, { passive: true }); addEventListener("resize", upd); upd(); setTimeout(upd, 400);
+        let down = false, sx = 0, sl = 0, moved = false;
+        T.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse" || e.button !== 0) return; down = true; moved = false; sx = e.clientX; sl = T.scrollLeft; });
+        addEventListener("pointermove", (e) => { if (!down) return; const dx = e.clientX - sx; if (!moved && Math.abs(dx) > 6) { moved = true; T.classList.add("dragging"); } if (moved) { T.scrollLeft = sl - dx; e.preventDefault(); } });
+        addEventListener("pointerup", () => { if (!down) return; down = false; setTimeout(() => T.classList.remove("dragging"), 0); });
+        T.addEventListener("click", (e) => { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+        T.addEventListener("dragstart", (e) => e.preventDefault());
+      }
     })();
   })();
 })();
