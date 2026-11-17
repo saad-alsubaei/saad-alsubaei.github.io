@@ -835,3 +835,6 @@ a.mv-reel{display:block;text-decoration:none}
   .mv-reels-wrap.only .mv-reels{grid-auto-columns:44%}
 }
 @media (prefers-reduced-motion:reduce){.mv-cat{transition:none}}
+/* v59: مسافة تحت «تابع الدكتور» حتى لا تغطيها لوحة الزوار */
+.hsocial{margin-bottom:48px}
+@media (max-width:900px){.hsocial{margin-bottom:56px}}
