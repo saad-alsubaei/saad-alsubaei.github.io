@@ -863,3 +863,19 @@ a.mv-reel{display:block;text-decoration:none}
   .mv-rail.can-scroll.at-start .mv-tabs{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 36px,#000 100%);mask-image:linear-gradient(90deg,transparent 0,#000 36px,#000 100%)}
   .mv-rail.can-scroll.at-end .mv-tabs{-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 36px),transparent 100%);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 36px),transparent 100%)}
 }
+
+/* v61: بطاقات التصنيفات موحّدة الأبعاد والاسم كاملاً (سطران)، والصورة المصغّرة خلفية متلاشية */
+.mv-cat{position:relative;isolation:isolate;width:280px;min-width:0;max-width:none;height:88px;min-height:0;padding:10px 14px 10px 12px;gap:12px;align-items:center;overflow:hidden}
+.mv-cat .mc-th{position:absolute;z-index:-1;inset:0 auto 0 0;width:58%;height:100%;aspect-ratio:auto;border-radius:0;box-shadow:none;background:none;opacity:.55;-webkit-mask-image:linear-gradient(90deg,#000 10%,transparent 100%);mask-image:linear-gradient(90deg,#000 10%,transparent 100%)}
+.mv-cat .mc-th img{filter:saturate(.8)}
+.mv-cat::before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(270deg,rgb(var(--t-primary-dd-rgb) / .92) 0,rgb(var(--t-primary-dd-rgb) / .78) 55%,rgb(var(--t-primary-dd-rgb) / .35) 100%)}
+.mv-cat.on::before{background:linear-gradient(270deg,var(--gold-l) 0,var(--gold-l) 58%,rgb(var(--t-accent-rgb) / .78) 100%)}
+.mv-cat.on .mc-th{opacity:.35}
+.mv-cat .mc-t b{white-space:normal;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.5;font-size:15px;text-overflow:clip}
+.mv-cat .mc-t small{margin-top:1px}
+.mv-cat .mc-ic{align-self:center}
+@media (max-width:640px){
+  .mv-cat{width:212px;height:80px;padding:8px 10px 8px 10px;gap:9px}
+  .mv-cat .mc-th{display:block;width:60%}
+  .mv-cat .mc-t b{font-size:13.5px;line-height:1.45}
+}
