@@ -885,3 +885,13 @@ a.mv-reel{display:block;text-decoration:none}
 .g-site .card h3{min-height:calc(1.7em * 3)}
 @media (max-width:640px){.card h3{min-height:calc(1.6em * 3)}.g-site .card h3{min-height:calc(1.65em * 3)}}
 .card .meta{margin-top:auto}
+/* صف تصنيفات المجموعة: شريط بلون الهوية الخفيف يربطه بالمجموعة المختارة */
+.home .lib-bar.g-mode .subcats{position:relative;align-items:center;gap:8px;padding:7px 8px;margin-top:2px;border-radius:16px;background:rgb(var(--t-primary-rgb) / .07);border:1px solid rgb(var(--t-primary-rgb) / .14);border-inline-start:4px solid var(--t-primary)}
+.home .lib-bar.g-mode .subcats .sub-lbl{flex:none;display:inline-flex;align-items:center;gap:6px;padding:0 6px 0 4px;color:var(--t-primary);font-size:13.5px;font-weight:700;white-space:nowrap}
+.home .lib-bar.g-mode .subcats .sub-lbl svg{width:17px;height:17px;flex:none;opacity:.8}
+.home .lib-bar.g-mode .subcats .chip{min-height:38px;padding:7px 14px;font-size:14.5px;background:var(--white);border-color:rgb(var(--t-primary-rgb) / .2);color:var(--t-primary)}
+.home .lib-bar.g-mode .subcats .chip:hover{border-color:rgb(var(--t-primary-rgb) / .45)}
+.home .lib-bar.g-mode .subcats .chip small{background:rgb(var(--t-primary-rgb) / .08)}
+.home .lib-bar.g-mode .subcats .chip.on{background:rgb(var(--t-primary-rgb) / .16);border-color:rgb(var(--t-primary-rgb) / .55);color:var(--t-primary-dd);font-weight:700;box-shadow:inset 0 0 0 1px rgb(var(--t-primary-rgb) / .25)}
+.home .lib-bar.g-mode .subcats .chip.on small{background:var(--t-primary);color:#fff}
+@media (max-width:640px){.home .lib-bar.g-mode .subcats{padding:6px;gap:6px;border-radius:14px}.home .lib-bar.g-mode .subcats .sub-lbl{font-size:12.5px;padding-inline:2px 4px}.home .lib-bar.g-mode .subcats .chip{min-height:36px;padding:6px 12px;font-size:14px}}
