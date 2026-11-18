@@ -510,7 +510,7 @@
 .g-empty span{font-size:15px;color:var(--muted)}
 
 /* صفحة التصنيف: تُخفى أقسام الرئيسية ويظهر رأس التصنيف فوق شبكة الأغلفة */
-.cat-view .hero,.cat-view #stats,.cat-view #soon,.cat-view #colls,.cat-view #cont,.cat-view #top,.cat-view #library>.wrap>.sec-head,.cat-view #resLine{display:none!important}
+.cat-view .hero,.cat-view #stats,.cat-view #soon,.cat-view #colls,.cat-view #cont,.cat-view #top,.cat-view #fwh,.cat-view #vids,.cat-view #aud,.cat-view #library>.wrap>.sec-head,.cat-view #resLine{display:none!important}
 .cat-view #library{padding-top:26px}
 .cat-head[hidden]{display:none}
 .cat-head{margin:0 0 22px;padding:28px 30px 26px;border-radius:24px;background:linear-gradient(150deg,var(--t-primary-l),var(--t-primary) 50%,var(--t-primary-d));color:#fff;position:relative;overflow:hidden;isolation:isolate;box-shadow:0 26px 44px -34px rgb(var(--t-primary-dd-rgb) / 1)}
