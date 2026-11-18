@@ -2,6 +2,16 @@
  "channel": "UCqBid7ELy5anliG0BWxK6Vg",
  "lists": [
   {
+   "id": "PLG2J6QQCObK0",
+   "title": "التعليق على صحيح البخاري",
+   "count": 3
+  },
+  {
+   "id": "PLSuAH4mrgx4w",
+   "title": "مسائل رمضانية",
+   "count": 7
+  },
+  {
    "id": "PLNXK540AH9iM",
    "title": "فوائد قصيرة",
    "count": 7
@@ -360,7 +370,12 @@
    "date": "2026-03-10",
    "dur": 3435,
    "short": false,
-   "lists": []
+   "lists": [
+    "PLG2J6QQCObK0"
+   ],
+   "pos": {
+    "PLG2J6QQCObK0": 0
+   }
   },
   {
    "yt": "Q3Ku1ei1YVo",
@@ -368,7 +383,12 @@
    "date": "2026-03-05",
    "dur": 2653,
    "short": false,
-   "lists": []
+   "lists": [
+    "PLG2J6QQCObK0"
+   ],
+   "pos": {
+    "PLG2J6QQCObK0": 1
+   }
   },
   {
    "yt": "LWLAUQy71fA",
@@ -384,7 +404,12 @@
    "date": "2026-03-04",
    "dur": 4950,
    "short": false,
-   "lists": []
+   "lists": [
+    "PLG2J6QQCObK0"
+   ],
+   "pos": {
+    "PLG2J6QQCObK0": 2
+   }
   },
   {
    "yt": "Wa9t8vcsI6U",
@@ -1653,7 +1678,12 @@
    "date": "2024-05-18",
    "dur": 465,
    "short": false,
-   "lists": []
+   "lists": [
+    "PLSuAH4mrgx4w"
+   ],
+   "pos": {
+    "PLSuAH4mrgx4w": 0
+   }
   },
   {
    "yt": "YXxz1R2AADc",
@@ -1661,7 +1691,12 @@
    "date": "2024-05-18",
    "dur": 442,
    "short": false,
-   "lists": []
+   "lists": [
+    "PLSuAH4mrgx4w"
+   ],
+   "pos": {
+    "PLSuAH4mrgx4w": 1
+   }
   },
   {
    "yt": "N3hFjv1Rz00",
@@ -1669,7 +1704,12 @@
    "date": "2024-05-18",
    "dur": 380,
    "short": false,
-   "lists": []
+   "lists": [
+    "PLSuAH4mrgx4w"
+   ],
+   "pos": {
+    "PLSuAH4mrgx4w": 2
+   }
   },
   {
    "yt": "KzB8BQQ_nlo",
@@ -1677,7 +1717,12 @@
    "date": "2024-05-18",
    "dur": 630,
    "short": false,
-   "lists": []
+   "lists": [
+    "PLSuAH4mrgx4w"
+   ],
+   "pos": {
+    "PLSuAH4mrgx4w": 3
+   }
   },
   {
    "yt": "lxa3miKE9xo",
@@ -1685,7 +1730,12 @@
    "date": "2024-05-18",
    "dur": 642,
    "short": false,
-   "lists": []
+   "lists": [
+    "PLSuAH4mrgx4w"
+   ],
+   "pos": {
+    "PLSuAH4mrgx4w": 4
+   }
   },
   {
    "yt": "riQ2qGBzfbE",
@@ -1693,7 +1743,12 @@
    "date": "2024-05-18",
    "dur": 501,
    "short": false,
-   "lists": []
+   "lists": [
+    "PLSuAH4mrgx4w"
+   ],
+   "pos": {
+    "PLSuAH4mrgx4w": 5
+   }
   },
   {
    "yt": "d7Ps9DXZaPI",
@@ -1727,7 +1782,12 @@
    "date": "2024-04-28",
    "dur": 231,
    "short": false,
-   "lists": []
+   "lists": [
+    "PLSuAH4mrgx4w"
+   ],
+   "pos": {
+    "PLSuAH4mrgx4w": 6
+   }
   },
   {
    "yt": "hKb3am1mZyc",
@@ -4557,5 +4617,5 @@
    }
   }
  ],
- "updated": "2026-11-18T06:50Z"
+ "updated": "2026-11-18T06:55Z"
 }
