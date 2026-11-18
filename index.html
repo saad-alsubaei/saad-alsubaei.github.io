@@ -912,7 +912,7 @@
 
       // شريط التصنيفات: «الأحدث» + قوائم التشغيل
       // داخل التصنيف: بترتيب قائمة التشغيل (pos)، وإلا برقم الحلقة في العنوان، وإلا الأقدم أولاً — «الأحدث» يبقى الأحدث أولاً
-      const epNum = (t) => { const m = String(t || "").replace(/[٠-٩]/g, (d) => "٠١٢٣٤٥٦٧٨٩".indexOf(d)).match(/^\s*(?:الدرس|الحلقة|المجلس|اللقاء)?\s*\(?(\d{1,4})\)?\s*[-–ـ:.)]/) || String(t || "").match(/(?:الدرس|الحلقة|المجلس|اللقاء|الجزء)\s*\(?(\d{1,4})/); return m ? +m[1] : null; };
+      const epNum = (t) => { const m = String(t || "").replace(/[٠-٩]/g, (d) => "٠١٢٣٤٥٦٧٨٩".indexOf(d)).match(/^\s*(?:الدرس|الحلقة|المجلس|اللقاء)?\s*\(?(\d{1,4})\)?\s*[-–ـ:.)]/) || String(t || "").replace(/[٠-٩]/g, (d) => "٠١٢٣٤٥٦٧٨٩".indexOf(d)).match(/(?:الدرس|الحلقة|المجلس|اللقاء|الجزء)\s*\(?(\d{1,4})|\((\d{1,4})\)/); return m ? +(m[1] || m[2]) : null; };
       const byOrder = (id) => (a, b) => { const pa = a.pos && a.pos[id], pb = b.pos && b.pos[id];
         if (pa != null && pb != null) return pa - pb;
         const na = epNum(a.title), nb = epNum(b.title); if (na != null && nb != null && na !== nb) return na - nb;
@@ -921,7 +921,9 @@
       const bySeries = (id) => (a, b) => { const na = epNum(a.title), nb = epNum(b.title);
         if (na !== nb) return (na == null ? 1e9 : na) - (nb == null ? 1e9 : nb);
         return byOrder(id)(a, b); };
-      const sortCat = (id, arr) => arr.sort(arr.filter((v) => epNum(v.title) != null).length >= arr.length * 0.8 && arr.length > 2 ? bySeries(id) : byOrder(id));
+      const sortCat = (id, arr) => { const ns = arr.map((v) => epNum(v.title)).filter((n) => n != null);
+        const series = arr.length > 2 && ns.length >= arr.length * 0.8 && new Set(ns).size === ns.length;   // أرقام فريدة فقط، وإلا فترتيب يوتيوب
+        return arr.sort(series ? bySeries(id) : byOrder(id)); };
       const T = $("mvTabs"), inCat = (id) => id === "__new" ? all : sortCat(id, all.filter((v) => v.lists.includes(id)));
       const tabs = [{ id: "__new", title: "الأحدث" }, ...cats.filter((c) => inCat(c.id).length)];
       let curCat = "__new";
