@@ -923,7 +923,8 @@
         return byOrder(id)(a, b); };
       const sortCat = (id, arr) => { const ns = arr.map((v) => epNum(v.title)).filter((n) => n != null);
         const series = arr.length > 2 && ns.length >= arr.length * 0.8 && new Set(ns).size === ns.length;   // أرقام فريدة فقط، وإلا فترتيب يوتيوب
-        return arr.sort(series ? bySeries(id) : byOrder(id)); };
+        const multi = !series && arr.length > 2 && ns.length >= arr.length * 0.8;   // أكثر من سلسلة مرقّمة في قائمة واحدة: الأقدم نشراً أولاً ثم الرقم
+        return arr.sort(series ? bySeries(id) : multi ? (a, b) => (a.date || "").slice(0, 10).localeCompare((b.date || "").slice(0, 10)) || (epNum(a.title) ?? 1e9) - (epNum(b.title) ?? 1e9) : byOrder(id)); };
       const T = $("mvTabs"), inCat = (id) => id === "__new" ? all : sortCat(id, all.filter((v) => v.lists.includes(id)));
       const tabs = [{ id: "__new", title: "الأحدث" }, ...cats.filter((c) => inCat(c.id).length)];
       let curCat = "__new";
