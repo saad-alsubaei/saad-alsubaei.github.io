@@ -917,7 +917,12 @@
         if (pa != null && pb != null) return pa - pb;
         const na = epNum(a.title), nb = epNum(b.title); if (na != null && nb != null && na !== nb) return na - nb;
         return (a.date || "").localeCompare(b.date || ""); };
-      const T = $("mvTabs"), inCat = (id) => id === "__new" ? all : all.filter((v) => v.lists.includes(id)).sort(byOrder(id));
+      // السلاسل المرقّمة (٨٠٪ فأكثر من مقاطعها برقم حلقة): بالرقم دائماً مهما كان ترتيبها في يوتيوب، وغير المرقّم بعدها
+      const bySeries = (id) => (a, b) => { const na = epNum(a.title), nb = epNum(b.title);
+        if (na !== nb) return (na == null ? 1e9 : na) - (nb == null ? 1e9 : nb);
+        return byOrder(id)(a, b); };
+      const sortCat = (id, arr) => arr.sort(arr.filter((v) => epNum(v.title) != null).length >= arr.length * 0.8 && arr.length > 2 ? bySeries(id) : byOrder(id));
+      const T = $("mvTabs"), inCat = (id) => id === "__new" ? all : sortCat(id, all.filter((v) => v.lists.includes(id)));
       const tabs = [{ id: "__new", title: "الأحدث" }, ...cats.filter((c) => inCat(c.id).length)];
       let curCat = "__new";
       if (tabs.length > 1) {
