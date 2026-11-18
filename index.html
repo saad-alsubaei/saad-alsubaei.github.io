@@ -193,6 +193,7 @@
 <section class="sec" id="library" aria-labelledby="libH">
   <div class="wrap">
     <div class="sec-head rv"><div><div class="sec-kicker">الفهرس الكامل</div><h2 id="libH">جميع الكتب</h2><p id="libSub"></p></div></div>
+    <div id="libAnchor" aria-hidden="true"></div>
     <div class="lib-bar" id="libBar">
       <nav class="cats" id="cats" aria-label="تصنيفات الكتب" hidden></nav>
       <label class="sortbox"><span class="sr">ترتيب الكتب</span>
@@ -629,14 +630,14 @@
     const navEl = $("cats"), subNav = el("nav", "cats subcats"); subNav.setAttribute("aria-label", "تصنيفات المجموعة"); subNav.hidden = true;
     navEl.hidden = false; $("libBar").classList.add("g-mode"); $("libBar").appendChild(subNav);
     const chip = (host, label, val, n, fn) => { const c = el("button", "chip", label); c.type = "button"; c.dataset.val = val; c.appendChild(el("small", "", ar(n))); c.onclick = fn; host.appendChild(c); return c; };
-    chip(navEl, "الكل", "", books.length, () => nav("", "", "stay"));
-    GROUPS.forEach((g) => chip(navEl, g.name, isDirect(g) ? g.name : "g:" + g.name, inGrp(g).length, () => nav(g.name, isDirect(g) ? g.name : "*", "stay")));
+    chip(navEl, "الكل", "", books.length, () => nav("", "", "keep"));
+    GROUPS.forEach((g) => chip(navEl, g.name, isDirect(g) ? g.name : "g:" + g.name, inGrp(g).length, () => nav(g.name, isDirect(g) ? g.name : "*", "keep")));
     gPaint = () => {
       const g = curCat.startsWith("g:") ? curCat.slice(2) : grpOf(curCat);
       navEl.querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x.dataset.val === (g ? (isDirect(GROUPS.find((y) => y.name === g)) ? g : "g:" + g) : "")));
       const G_ = GROUPS.find((x) => x.name === g && !isDirect(x)); subNav.hidden = !G_; subNav.replaceChildren();
       if (G_) { const lb_ = el("span", "sub-lbl"); lb_.innerHTML = svg('<path d="M5 4v9a3 3 0 0 0 3 3h11"/><path d="m15 12 4 4-4 4"/>'); lb_.appendChild(el("span", "", "تصنيفات " + g)); subNav.appendChild(lb_);
-        chip(subNav, "الكل", "g:" + g, inGrp(G_).length, () => nav(g, "*", "stay")); G_.cats.forEach((c) => chip(subNav, lbT(c), c, inCat(c).length, () => nav(g, c, "stay"))); subNav.querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x.dataset.val === curCat)); }
+        chip(subNav, "الكل", "g:" + g, inGrp(G_).length, () => nav(g, "*", "keep")); G_.cats.forEach((c) => chip(subNav, lbT(c), c, inCat(c).length, () => nav(g, c, "keep"))); subNav.querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x.dataset.val === curCat)); }
       [navEl, subNav].forEach((n_) => { const on_ = n_.querySelector(".chip.on"); if (on_ && !n_.hidden) n_.scrollTo({ left: on_.offsetLeft - (n_.clientWidth - on_.offsetWidth) / 2 }); });
     };
     // التذييل: المجموعات
@@ -683,19 +684,20 @@
     $("resClear").onclick = () => nav("", "", "lib");
 
     const hashOf = (g, c) => g ? "#g/" + encodeURIComponent(g) + (c ? "/" + encodeURIComponent(c) : "") : "";
-    // stay: أزرار شريط التصفية — يبقى الزائر في مكانه (الرف في نفس موضعه من الشاشة) بدل الصعود لأعلى الصفحة
     function nav(g, c, mode) {
       const h = hashOf(g, c), url = h || location.pathname + location.search;
-      const anchor = mode === "stay" ? $("shelf").getBoundingClientRect().top : null;
       if (location.hash !== h) history.pushState(null, "", url);
-      apply(mode === "stay" ? "none" : mode, anchor);
+      // أزرار التصنيفات: تبقى الشاشة ثابتة وشريط التصنيفات في مكانه (لا قفز لأعلى الصفحة)
+      const anc = $("libAnchor"), tbH = $("topbar").offsetHeight, a0 = mode === "keep" ? anc.getBoundingClientRect().top : 0;
+      apply(mode);
+      if (mode === "keep") { const want = Math.max(a0, tbH), d = anc.getBoundingClientRect().top - want; if (Math.abs(d) > 1) window.scrollTo({ top: scrollY + d, behavior: "auto" }); }
     }
     function parse() {
       const m = location.hash.match(/^#g\/([^/]*)(?:\/(.*))?$/);
       if (!m) return location.hash && location.hash !== "#" ? null : { g: "", c: "" };
       try { return { g: decodeURIComponent(m[1]), c: m[2] ? decodeURIComponent(m[2]) : "" }; } catch (e) { return { g: "", c: "" }; }
     }
-    function apply(mode, anchor) {
+    function apply(mode) {
       const s_ = parse(); if (!s_) return; // روابط داخلية أخرى (#library…)
       const was = viewG;
       if (!s_.g || !GROUPS.some((x) => x.name === s_.g)) { leaveCat(); if (was !== "") { level1(); if (was !== null) anim(); } setCat(""); }
@@ -705,7 +707,7 @@
         if (s_.c) catView(s_.g, s_.c); else leaveCat();
         setCat(val);
       }
-      if (anchor != null) { window.scrollTo({ top: Math.max(0, $("shelf").getBoundingClientRect().top + scrollY - anchor), behavior: "auto" }); return; }
+      if (mode === "keep") return;
       if (s_.c) { window.scrollTo({ top: 0, behavior: "auto" }); return; }
       if (mode === "lib") goLib();
       else if (mode === "colls" && topOf(sec) < scrollY - 4) window.scrollTo({ top: topOf(sec), behavior: smooth() });
