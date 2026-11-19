@@ -1,21 +1,36 @@
 {
- "updated": "2026-11-19T18:06Z",
- "total": 242,
- "last28": 242,
+ "updated": "2026-11-19T19:17Z",
+ "total": 263,
+ "last28": 263,
  "countries": [
   {
    "code": "SA",
    "name": "Saudi Arabia",
-   "count": 226
+   "count": 240
   },
   {
    "code": "EG",
    "name": "Egypt",
-   "count": 4
+   "count": 6
+  },
+  {
+   "code": "MA",
+   "name": "Morocco",
+   "count": 3
+  },
+  {
+   "code": "DZ",
+   "name": "Algeria",
+   "count": 2
   },
   {
    "code": "NG",
    "name": "Nigeria",
+   "count": 2
+  },
+  {
+   "code": "SE",
+   "name": "Sweden",
    "count": 2
   },
   {
@@ -29,11 +44,6 @@
    "count": 1
   },
   {
-   "code": "DZ",
-   "name": "Algeria",
-   "count": 1
-  },
-  {
    "code": "GT",
    "name": "Guatemala",
    "count": 1
@@ -44,23 +54,18 @@
    "count": 1
   },
   {
-   "code": "MA",
-   "name": "Morocco",
-   "count": 1
-  },
-  {
    "code": "NL",
    "name": "Netherlands",
    "count": 1
   },
   {
-   "code": "SE",
-   "name": "Sweden",
+   "code": "TN",
+   "name": "Tunisia",
    "count": 1
   },
   {
-   "code": "TN",
-   "name": "Tunisia",
+   "code": "YE",
+   "name": "Yemen",
    "count": 1
   }
  ]
