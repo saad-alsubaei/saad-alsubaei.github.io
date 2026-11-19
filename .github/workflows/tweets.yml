@@ -1,0 +1,26 @@
+name: إضافة التغريدات الجديدة
+on:
+  push:
+    paths: ["tweets-queue.json"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: tweets
+jobs:
+  tweets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pillow
+      - name: جلب التغريدات من قائمة الانتظار
+        run: python3 tools/add_tweets.py
+      - name: حفظ
+        run: |
+          if [ -n "$(git status --porcelain tweets.json tweets-queue.json tw tweets-test.json)" ]; then
+            git config user.name "tweets-bot"
+            git config user.email "tweets-bot@users.noreply.github.com"
+            git add -A tweets.json tweets-queue.json tw; [ -f tweets-test.json ] && git add tweets-test.json || true
+            git commit -m "تحديث قسم التغريدات"
+            git pull --rebase origin main
+            git push
+          fi

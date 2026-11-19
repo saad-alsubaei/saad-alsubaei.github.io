@@ -203,7 +203,7 @@
     const h = el("div", "tw-head"), av = el("span", "tw-av"); av.innerHTML = ICON.feather;
     const who = el("span", "tw-who"); who.append(el("b", "", site.brandSub || site.author || ""), el("small", "", fmtDate(x.date)));
     const xa = el("a", "tw-x"); xa.href = xUrl(x); xa.target = "_blank"; xa.rel = "noopener"; xa.setAttribute("aria-label", "فتح التغريدة على منصة X"); xa.innerHTML = ICON.x;
-    h.append(av, who, xa);
+    h.append(av, who); if (!/^m/.test(x.id)) h.append(xa);
     const t = el("div", "tw-txt"); fillText(t, x.text.replace(/\n{2,}/g, "\n"), terms); c.append(h, t);
     if (x.text.length > 330 || (x.text.match(/\n/g) || []).length > 6) {
       t.classList.add("clip"); const m = el("button", "tw-more", "اقرأ المزيد"); m.type = "button";

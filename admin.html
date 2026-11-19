@@ -137,6 +137,28 @@
     <button class="btn" id="saveSite">حفظ الإعدادات</button>
     <div class="status" id="siteStatus"></div>
   </section>
+
+  <!-- ٥) تغريدات الدكتور -->
+  <section class="panel" id="twPanel" hidden>
+    <h2><span class="n">٥</span> إضافة تغريدة لقسم «من تغريدات الدكتور»</h2>
+    <p style="margin:0 0 12px;color:var(--muted)">في تطبيق X: افتح التغريدة ← زر المشاركة ← «نسخ الرابط»، ثم الصقه هنا. النص والصور تُجلب تلقائياً، والتصنيف يُختار تلقائياً.</p>
+    <label class="field"><span>رابط التغريدة <small>يمكن لصق أكثر من رابط، كل رابط في سطر.</small></span>
+      <textarea class="input" id="twUrls" rows="3" dir="ltr" placeholder="https://x.com/.../status/123456789"></textarea></label>
+    <label class="field"><span>التصنيف</span><select class="input" id="twCat"></select></label>
+    <button class="btn gold" id="twAdd" type="button">إضافة للقسم</button>
+    <div class="status" id="twStatus"></div>
+    <details class="help"><summary>إضافة يدوية (إذا لم تُجلب التغريدة تلقائياً)</summary>
+      <label class="field"><span>نص التغريدة</span><textarea class="input" id="twText" rows="5"></textarea></label>
+      <label class="field"><span>الصور <small>حتى ٤ صور.</small></span><input class="input" id="twImgs" type="file" accept="image/*" multiple></label>
+      <label class="field"><span>رابط التغريدة <small>اختياري.</small></span><input class="input" id="twUrl1" dir="ltr"></label>
+      <button class="btn" id="twManual" type="button">إضافة يدوياً</button>
+    </details>
+    <details class="help"><summary>حذف تغريدة من القسم</summary>
+      <label class="field"><span>رابط التغريدة <small>انسخه من زر X في بطاقة التغريدة داخل المكتبة.</small></span><input class="input" id="twDel" dir="ltr"></label>
+      <button class="btn ghost" id="twDelBtn" type="button">حذف</button>
+    </details>
+    <ul class="blist" id="twQueue"></ul>
+  </section>
 </div>
 
 <script src="assets/common.js?v=42"></script>
@@ -390,6 +412,7 @@ async function connect() {
     connected = true; $("dot").className = "dot on"; $("connText").textContent = "متصل بـ " + repo.full_name;
     hush("connStatus");
     await loadLib();
+    try { twShowQueue(); } catch (e) {}
   } catch (e) { connected = false; $("dot").className = "dot bad"; $("connText").textContent = "غير متصل"; say("connStatus", "err", explain(e)); }
 }
 $("saveToken").onclick = () => {
@@ -511,6 +534,61 @@ $("saveSite").onclick = () => run("siteStatus", async () => {
 }, "تم حفظ الإعدادات ✓");
 
 if ($("token").value) connect();
+
+// ===== ٥) تغريدات الدكتور (تظهر فقط إذا كان في المكتبة قسم تغريدات) =====
+const TWID = /status(?:es)?\/(\d{6,25})/;
+let twCats = [];
+async function twLoad() {
+  try { const r = await fetch("tweets.json?t=" + Date.now(), { cache: "no-store" }); if (!r.ok) return; const d = await r.json(); twCats = d.cats || []; } catch (e) { return; }
+  $("twPanel").hidden = false;
+  $("twCat").replaceChildren(...[["", "تلقائي (حسب نص التغريدة)"], ...twCats.map((c) => [c, c])].map(([v, t]) => { const o = document.createElement("option"); o.value = v; o.textContent = t; return o; }));
+  twShowQueue();
+}
+async function twReadQueue() { try { const f = await gh("GET", `/contents/tweets-queue.json?ref=${branch}`); return JSON.parse(fromB64text(f.content)) || []; } catch (e) { if (e.status === 404) return []; throw e; } }
+async function twShowQueue() {
+  if (!connected) return; const ul = $("twQueue"); ul.replaceChildren();
+  let q = []; try { q = await twReadQueue(); } catch (e) { return; }
+  q.forEach((e, i) => { const li = document.createElement("li"); li.style.cssText = "display:flex;gap:8px;align-items:center;flex-wrap:wrap";
+    const t = document.createElement("span"); t.style.flex = "1"; t.dir = "auto";
+    t.textContent = (e.error ? "⚠️ لم تُضف: " + e.error + " — " : "⏳ قيد الإضافة: ") + (e.url || e.del || (e.text || "").slice(0, 60));
+    const x = document.createElement("button"); x.className = "btn ghost small"; x.type = "button"; x.textContent = "إزالة من القائمة";
+    x.onclick = () => twSend((qq) => qq.filter((_, k) => k !== i), [], "إزالة من قائمة التغريدات", "أُزيلت.");
+    li.append(t, x); ul.appendChild(li); });
+}
+async function twSend(mut, files, msg, ok) {
+  if (!connected) { say("twStatus", "err", "اتصل أولاً بمفتاح الدخول (القسم ١)."); return; }
+  say("twStatus", "info", "جارٍ الإرسال…");
+  try {
+    const q = mut(await twReadQueue());
+    await commit([{ path: "tweets-queue.json", text: JSON.stringify(q, null, 1) }, ...files], msg);
+    say("twStatus", "ok", ok + " تظهر في قسم التغريدات خلال دقيقتين تقريباً. إن تعذّر الجلب ستظهر رسالة تحت هذا القسم.");
+    setTimeout(twShowQueue, 1500); setTimeout(twShowQueue, 150000);
+  } catch (e) { say("twStatus", "err", explain(e)); }
+}
+$("twAdd").onclick = () => {
+  const lines = $("twUrls").value.split(/\s+/).filter(Boolean), good = lines.filter((u) => TWID.test(u)), bad = lines.filter((u) => !TWID.test(u));
+  if (!good.length) { say("twStatus", "err", "الصق رابط تغريدة صحيح، مثل: https://x.com/اسم_الحساب/status/123…"); return; }
+  if (bad.length) { say("twStatus", "err", "هذه الروابط غير صحيحة: " + bad.join(" ، ")); return; }
+  const cat = $("twCat").value;
+  twSend((q) => q.concat(good.map((url) => ({ url, cat }))), [], "إضافة تغريدات", good.length > 1 ? "أُرسلت " + good.length + " تغريدات." : "أُرسلت التغريدة.")
+    .then(() => { if ($("twStatus").className.includes("ok")) $("twUrls").value = ""; });
+};
+$("twManual").onclick = async () => {
+  const text = $("twText").value.trim(), fl = [...$("twImgs").files].slice(0, 4);
+  if (!text) { say("twStatus", "err", "اكتب نص التغريدة."); return; }
+  const stamp = Date.now(), files = [], paths = [];
+  for (const [j, f] of fl.entries()) { const p = `tw/in/${stamp}-${j}.${(f.name.split(".").pop() || "jpg").toLowerCase()}`; paths.push(p); files.push({ path: p, buf: await f.arrayBuffer() }); }
+  const m = ($("twUrl1").value.match(TWID) || [])[1];
+  await twSend((q) => q.concat([{ text, imgs: paths, cat: $("twCat").value, ...(m ? { id: m } : {}) }]), files, "إضافة تغريدة يدوياً", "أُرسلت التغريدة.");
+  if ($("twStatus").className.includes("ok")) { $("twText").value = ""; $("twImgs").value = ""; $("twUrl1").value = ""; }
+};
+$("twDelBtn").onclick = () => {
+  const m = ($("twDel").value.match(TWID) || [])[1];
+  if (!m) { say("twStatus", "err", "الصق رابط التغريدة المراد حذفها."); return; }
+  if (!confirm("حذف هذه التغريدة من قسم التغريدات في المكتبة؟ (لا تُحذف من حساب X)")) return;
+  twSend((q) => q.concat([{ del: m }]), [], "حذف تغريدة", "أُرسل طلب الحذف.").then(() => { $("twDel").value = ""; });
+};
+twLoad();
 </script>
 </body>
 </html>
