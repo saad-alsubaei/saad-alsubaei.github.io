@@ -67,3 +67,5 @@
 .tw-acts .tw-share{width:auto;padding:0 12px 0 10px;gap:6px;display:inline-flex;align-items:center;border-radius:999px;color:#fff;background:var(--t-wa,#1fa855);font:700 13.5px inherit;font-family:inherit}
 .tw-acts .tw-share:hover{color:#fff;background:var(--t-wa,#1fa855);filter:brightness(1.07)}
 .tw-acts .tw-share svg{width:17px;height:17px}
+.tw-av{overflow:hidden}
+.tw-av img{width:100%;height:100%;object-fit:cover;display:block}

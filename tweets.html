@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="assets/style.css?v=45">
 <link rel="stylesheet" href="assets/home.css?v=66">
 <link rel="stylesheet" href="assets/fawaid.css?v=7">
-<link rel="stylesheet" href="assets/tweets.css?v=3">
+<link rel="stylesheet" href="assets/tweets.css?v=4">
 <!-- PWA:START (يُولَّد تلقائياً: python3 tools/pwa.py) -->
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -209,7 +209,7 @@
   function card(x) {
     const terms = norm(q).trim().split(/\s+/).filter(Boolean);
     const c = el("article", "tw-card"); c.id = "t" + x.id;
-    const h = el("div", "tw-head"), av = el("span", "tw-av"); av.innerHTML = ICON.feather;
+    const h = el("div", "tw-head"), av = el("span", "tw-av"); if (tw.avatar) { const ai = el("img"); ai.src = tw.avatar; ai.alt = ""; ai.loading = "lazy"; av.appendChild(ai); } else av.innerHTML = ICON.feather;
     const who = el("span", "tw-who"); who.append(el("b", "", site.brandSub || site.author || ""), el("small", "", fmtDate(x.date)));
     const xa = el("a", "tw-x"); xa.href = xUrl(x); xa.target = "_blank"; xa.rel = "noopener"; xa.setAttribute("aria-label", "فتح التغريدة على منصة X"); xa.innerHTML = ICON.x;
     h.append(av, who); if (!/^m/.test(x.id)) h.append(xa);
@@ -278,7 +278,7 @@
 
 
   // ===== مشاركة التغريدة بقالب مميز (بطاقة 1080×1920 بهوية المكتبة — نفس فكرة مشاركة صفحة الكتاب) =====
-  const waText = (x) => x.text.slice(0, 600) + (x.text.length > 600 ? "…" : "") + "\n\nمن تغريدات " + (site.brandSub || "") + "\n" + link(x);
+  const waText = (x) => x.text.slice(0, 600) + (x.text.length > 600 ? "…" : "") + "\n\nمن تغريدات " + (site.brandSub || "") + "\nفي المكتبة الرقمية:\n" + link(x);
   function rgb(c) { const k = rgb.k || (rgb.k = Object.assign(document.createElement("canvas"), { width: 1, height: 1 }).getContext("2d", { willReadFrequently: true }));
     k.clearRect(0, 0, 1, 1); k.fillStyle = "#000"; k.fillStyle = c || "#000"; k.fillRect(0, 0, 1, 1); const d = k.getImageData(0, 0, 1, 1).data; return [d[0], d[1], d[2]]; }
   const A = (c, a) => { const [r, g, b] = rgb(c); return `rgba(${r},${g},${b},${a})`; };
@@ -297,17 +297,21 @@
     else { const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, t.primary); gr.addColorStop(1, t.deep || t.primary); g.fillStyle = gr; g.fillRect(0, 0, W, H); }
     const glow = g.createRadialGradient(CX, 240, 0, CX, 240, 760); glow.addColorStop(0, A(t.ac, t.light ? .10 : .16)); glow.addColorStop(1, A(t.ac, 0)); g.fillStyle = glow; g.fillRect(0, 0, W, H);
     g.fillStyle = A(t.fg, t.light ? .08 : .07); for (let yy = 18, r = 0; yy < H; yy += 36, r++) for (let xx = (r % 2 ? 36 : 18); xx < W; xx += 36) { g.beginPath(); g.arc(xx, yy, 2.2, 0, 7); g.fill(); }
-    // أعلى: «من تغريدات الدكتور» بين خطين + اسم الدكتور بخطه
-    const kick = "من تغريدات الدكتور"; g.font = '600 40px "Plex", sans-serif'; g.fillStyle = t.ac; g.fillText(kick, CX, 150);
-    const dw = g.measureText(kick).width / 2 + 28; g.strokeStyle = t.ac; g.lineWidth = 2.5; g.lineCap = "round";
-    g.beginPath(); g.moveTo(CX - dw, 136); g.lineTo(CX - dw - 110, 136); g.moveTo(CX + dw, 136); g.lineTo(CX + dw + 110, 136); g.stroke();
-    let nameY = 250;
-    if (site.nameArt) { try { const im = await loadImg(site.nameArt), h = 96, w = h * im.width / im.height, k = document.createElement("canvas"); k.width = Math.round(w * 2); k.height = h * 2;
-        const kc = k.getContext("2d"); kc.drawImage(im, 0, 0, k.width, k.height); kc.globalCompositeOperation = "source-in"; kc.fillStyle = t.fg; kc.fillRect(0, 0, k.width, k.height); g.drawImage(k, CX - w / 2, 180, w, h); }
-      catch (e) { g.font = '700 60px "Amiri", serif'; g.fillStyle = t.fg; g.fillText(site.brandSub || "", CX, nameY); } }
-    else { g.font = '700 60px "Amiri", serif'; g.fillStyle = t.fg; g.fillText(site.brandSub || site.author || "", CX, nameY); }
+    // أعلى: صورة الدكتور في دائرة بإطار + اسمه بخطه + «من تغريدات الدكتور»
+    const AV = tw.avatar || "", R0 = 128, AY = 70 + R0;
+    if (AV) { try { const av = await loadImg(AV);
+        g.save(); g.shadowColor = "rgba(0,0,0,.30)"; g.shadowBlur = 40; g.shadowOffsetY = 14; g.fillStyle = t.ac; g.beginPath(); g.arc(CX, AY, R0 + 12, 0, 7); g.fill(); g.restore();
+        g.fillStyle = t.light ? "#fff" : t.bg; g.beginPath(); g.arc(CX, AY, R0 + 5, 0, 7); g.fill();
+        g.save(); g.beginPath(); g.arc(CX, AY, R0, 0, 7); g.clip(); const s = Math.min(av.width, av.height); g.drawImage(av, (av.width - s) / 2, (av.height - s) / 2, s, s, CX - R0, AY - R0, R0 * 2, R0 * 2); g.restore();
+      } catch (e) {} }
+    const nTop = AV ? AY + R0 + 30 : 120;
+    if (site.nameArt) { try { const im = await loadImg(site.nameArt), h = 100, w = h * im.width / im.height, k = document.createElement("canvas"); k.width = Math.round(w * 2); k.height = h * 2;
+        const kc = k.getContext("2d"); kc.drawImage(im, 0, 0, k.width, k.height); kc.globalCompositeOperation = "source-in"; kc.fillStyle = t.fg; kc.fillRect(0, 0, k.width, k.height); g.drawImage(k, CX - w / 2, nTop, w, h); }
+      catch (e) { g.font = '700 60px "Amiri", serif'; g.fillStyle = t.fg; g.fillText(site.brandSub || "", CX, nTop + 70); } }
+    else { g.font = '700 60px "Amiri", serif'; g.fillStyle = t.fg; g.fillText(site.brandSub || site.author || "", CX, nTop + 70); }
+    const ky = nTop + 100;
     // البطاقة: النص (يُصغَّر تلقائياً ليتسع) + الصورة — ارتفاعها على قدر المحتوى وفي منتصف المساحة
-    const bx = 70, bw = W - 140, pad = 64, iw = bw - pad * 2, areaT = 330, areaB = 1700, dateH = 74;
+    const bx = 70, bw = W - 140, pad = 64, iw = bw - pad * 2, areaT = ky + 50, areaB = 1760, dateH = 74;
     const ink = t.ink || "#222", maxInner = areaB - areaT - pad * 2 - dateH;
     let pic = null; const im0 = x.imgs && x.imgs[0]; if (im0) { try { pic = await loadImg(im0.m); } catch (e) {} }
     let ph = pic ? Math.min(600, iw * pic.height / pic.width, maxInner * .5) : 0; const gap = ph ? 44 : 0;
@@ -327,13 +331,12 @@
     g.textAlign = "center"; g.strokeStyle = A(ink, .12); g.lineWidth = 2; g.beginPath(); g.moveTo(bx + pad, by + bh - pad - dateH + 10); g.lineTo(bx + bw - pad, by + bh - pad - dateH + 10); g.stroke();
     const d = new Date(x.date + "T12:00:00"), hij = new Intl.DateTimeFormat("ar-SA-u-ca-islamic-umalqura-nu-arab", { day: "numeric", month: "long", year: "numeric" }).format(d).replace(/\s*هـ\s*$/, "") + " هـ";
     g.font = '500 32px "Plex", sans-serif'; g.fillStyle = A(ink, .6); g.fillText(hij + (cut ? "   •   التغريدة كاملة في الرابط" : ""), CX, by + bh - pad + 12);
-    // أسفل: رابط المكتبة
-    g.strokeStyle = A(t.fg, .22); g.lineWidth = 2; g.beginPath(); g.moveTo(200, 1772); g.lineTo(W - 200, 1772); g.stroke();
-    g.fillStyle = t.ac; g.beginPath(); g.moveTo(CX, 1762); g.lineTo(CX + 10, 1772); g.lineTo(CX, 1782); g.lineTo(CX - 10, 1772); g.fill();
-    const lead = "المزيد من فوائد الدكتور في ", brand = location.host || "مكتبته الرقمية";
-    g.font = '400 32px "Plex", sans-serif'; const w1 = g.measureText(lead).width; g.font = '600 32px "Plex", sans-serif'; const w2 = g.measureText(brand).width;
-    const R = CX + (w1 + w2) / 2; g.textAlign = "right"; g.font = '400 32px "Plex", sans-serif'; g.fillStyle = A(t.fg, .85); g.fillText(lead, R, 1846);
-    g.font = '600 32px "Plex", sans-serif'; g.fillStyle = t.ac; g.fillText(brand, R - w1, 1846);
+    // أسفل: حساب الدكتور على X (رابط المكتبة يُرسل مع الرسالة خارج الصورة)
+    const handle = tw.handle ? "@" + tw.handle : ""; if (handle) {
+      g.direction = "ltr"; g.font = '600 40px "Plex", sans-serif'; const hw = g.measureText(handle).width, lg = 40, gap2 = 16, tot = lg + gap2 + hw, x0 = CX - tot / 2, yb = 1858;
+      g.fillStyle = t.fg; g.textAlign = "left"; g.fillText(handle, x0 + lg + gap2, yb);
+      g.save(); g.translate(x0, yb - 34); g.scale(lg / 24, lg / 24); g.fillStyle = t.fg; g.fill(new Path2D("M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L2 3h6.4l4.4 5.8L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5Z")); g.restore();
+      g.direction = "rtl"; }
     return c;
   }
   let wsBlob = null, wsX = null, wsTok = 0, wsBack = null;
@@ -353,7 +356,7 @@
   $("wsClose").onclick = closeWs; $("wsModal").addEventListener("click", (e) => { if (e.target === $("wsModal")) closeWs(); });
   document.addEventListener("keydown", (e) => { if (!$("wsModal").hidden && e.key === "Escape") closeWs(); });
   $("wsGo").onclick = async () => {
-    if (!wsBlob) return; const x = wsX, text = "من تغريدات " + (site.brandSub || "") + "\n" + link(x);
+    if (!wsBlob) return; const x = wsX, text = "من تغريدات " + (site.brandSub || "") + "\nفي المكتبة الرقمية:\n" + link(x);
     let copied = false; try { await navigator.clipboard.writeText(text); copied = true; toast("تم نسخ الرابط ✓"); } catch (e) {}
     const file = new File([wsBlob], "tweet-" + x.id + ".jpg", { type: "image/jpeg" });
     if (navigator.canShare && navigator.share && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file], text }); return; } catch (e) { if (e && e.name === "AbortError") return; } }
