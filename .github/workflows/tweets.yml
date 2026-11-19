@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install pillow
+      - name: diag
+        run: python3 tools/tw_diag.py || true
       - name: جلب التغريدات من قائمة الانتظار
         run: python3 tools/add_tweets.py
       - name: حفظ
