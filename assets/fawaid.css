@@ -164,3 +164,7 @@ body.fw-lock{overflow:hidden}
 .fw-rail.can-scroll .fw-arr{display:grid}
 .fw-arr:disabled{opacity:0;pointer-events:none}
 @media (hover:none){.fw-arr{display:none!important}.fw-rail.can-scroll .fw-chips{scroll-padding-inline:24px}}
+
+.fwh-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.fwh-all.alt{background:transparent;color:var(--t-primary);border:1.5px solid var(--t-primary)}
+.fwh-all.alt:hover{background:rgb(var(--t-primary-rgb) / .08);filter:none}
