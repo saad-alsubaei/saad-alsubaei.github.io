@@ -60,3 +60,10 @@
 .tw-top svg{width:22px;height:22px}
 .tw-more:focus-visible,.tw-cat:focus-visible,.tw-media button:focus-visible{outline:2px solid var(--t-primary);outline-offset:2px}
 @media (max-width:640px){.tw-top{bottom:16px;inset-inline-end:16px}.fwh-links{justify-content:center}}
+.tw-page .ws-modal{z-index:210}
+.tw-page .ws-panel{background:var(--t-stage,#1d2430);color:#fff}
+.ws-txt{font-size:13.5px;color:#fff;opacity:.8;text-decoration:underline;text-underline-offset:4px}
+.ws-txt:hover{opacity:1}
+.tw-acts .tw-share{width:auto;padding:0 12px 0 10px;gap:6px;display:inline-flex;align-items:center;border-radius:999px;color:#fff;background:var(--t-wa,#1fa855);font:700 13.5px inherit;font-family:inherit}
+.tw-acts .tw-share:hover{color:#fff;background:var(--t-wa,#1fa855);filter:brightness(1.07)}
+.tw-acts .tw-share svg{width:17px;height:17px}
