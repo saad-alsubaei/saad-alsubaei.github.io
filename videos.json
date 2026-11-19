@@ -14,7 +14,7 @@
   {
    "id": "PLNXK540AH9iM",
    "title": "فوائد قصيرة",
-   "count": 7
+   "count": 9
   },
   {
    "id": "PLWrGoBQ2cm_A",
@@ -24,7 +24,7 @@
   {
    "id": "PLLjeoi3-EQRM",
    "title": "تنبيهات وتصحيحات",
-   "count": 7
+   "count": 8
   },
   {
    "id": "PLKxnRwDmNXNc",
@@ -83,6 +83,45 @@
   }
  ],
  "videos": [
+  {
+   "yt": "_ICYhY1If7I",
+   "title": "(تحرير) رواية قبيصة بن عقبة السوائي عن سفيان الثوري | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-11-18",
+   "dur": 821,
+   "short": false,
+   "lists": [
+    "PLLjeoi3-EQRM"
+   ],
+   "pos": {
+    "PLLjeoi3-EQRM": 0
+   }
+  },
+  {
+   "yt": "HPfK2zxjFOU",
+   "title": "طرب أهل الإبل.",
+   "date": "2026-11-18",
+   "dur": 20,
+   "short": true,
+   "lists": [
+    "PLNXK540AH9iM"
+   ],
+   "pos": {
+    "PLNXK540AH9iM": 0
+   }
+  },
+  {
+   "yt": "IQJbx4dNT6k",
+   "title": "عزَّة الاستغناء | د. سعد بن ضيدان السبيعي.",
+   "date": "2026-11-18",
+   "dur": 62,
+   "short": true,
+   "lists": [
+    "PLNXK540AH9iM"
+   ],
+   "pos": {
+    "PLNXK540AH9iM": 1
+   }
+  },
   {
    "yt": "7a9z6VB2OXg",
    "title": "قول (ربنا) (يارب) خمس مرات في الدعاء | د. سعد بن ضيدان السبيعي.",
@@ -158,7 +197,7 @@
     "PLNXK540AH9iM"
    ],
    "pos": {
-    "PLNXK540AH9iM": 0
+    "PLNXK540AH9iM": 2
    }
   },
   {
@@ -171,7 +210,7 @@
     "PLLjeoi3-EQRM"
    ],
    "pos": {
-    "PLLjeoi3-EQRM": 0
+    "PLLjeoi3-EQRM": 1
    }
   },
   {
@@ -210,7 +249,7 @@
     "PLLjeoi3-EQRM"
    ],
    "pos": {
-    "PLLjeoi3-EQRM": 1
+    "PLLjeoi3-EQRM": 2
    }
   },
   {
@@ -223,7 +262,7 @@
     "PLLjeoi3-EQRM"
    ],
    "pos": {
-    "PLLjeoi3-EQRM": 2
+    "PLLjeoi3-EQRM": 3
    }
   },
   {
@@ -236,7 +275,7 @@
     "PLLjeoi3-EQRM"
    ],
    "pos": {
-    "PLLjeoi3-EQRM": 3
+    "PLLjeoi3-EQRM": 4
    }
   },
   {
@@ -249,7 +288,7 @@
     "PLNXK540AH9iM"
    ],
    "pos": {
-    "PLNXK540AH9iM": 1
+    "PLNXK540AH9iM": 3
    }
   },
   {
@@ -275,7 +314,7 @@
     "PLNXK540AH9iM"
    ],
    "pos": {
-    "PLNXK540AH9iM": 2
+    "PLNXK540AH9iM": 4
    }
   },
   {
@@ -288,7 +327,7 @@
     "PLNXK540AH9iM"
    ],
    "pos": {
-    "PLNXK540AH9iM": 3
+    "PLNXK540AH9iM": 5
    }
   },
   {
@@ -301,7 +340,7 @@
     "PLNXK540AH9iM"
    ],
    "pos": {
-    "PLNXK540AH9iM": 4
+    "PLNXK540AH9iM": 6
    }
   },
   {
@@ -314,7 +353,7 @@
     "PLNXK540AH9iM"
    ],
    "pos": {
-    "PLNXK540AH9iM": 5
+    "PLNXK540AH9iM": 7
    }
   },
   {
@@ -327,7 +366,7 @@
     "PLLjeoi3-EQRM"
    ],
    "pos": {
-    "PLLjeoi3-EQRM": 4
+    "PLLjeoi3-EQRM": 5
    }
   },
   {
@@ -340,7 +379,7 @@
     "PLLjeoi3-EQRM"
    ],
    "pos": {
-    "PLLjeoi3-EQRM": 5
+    "PLLjeoi3-EQRM": 6
    }
   },
   {
@@ -3623,7 +3662,7 @@
     "PLNXK540AH9iM"
    ],
    "pos": {
-    "PLNXK540AH9iM": 6
+    "PLNXK540AH9iM": 8
    }
   },
   {
@@ -3728,7 +3767,7 @@
     "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_"
    ],
    "pos": {
-    "PLLjeoi3-EQRM": 6,
+    "PLLjeoi3-EQRM": 7,
     "PLGYl6zkEW4Gi9GC4pVd2O-pum7JYKeIv_": 10
    }
   },
@@ -4579,5 +4618,5 @@
    }
   }
  ],
- "updated": "2026-11-18T16:39Z"
+ "updated": "2026-11-19T01:54Z"
 }
