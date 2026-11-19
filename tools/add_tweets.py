@@ -115,7 +115,7 @@ def main():
                     for im in x.get("imgs", []):
                         for p in (im["t"], im["m"]):
                             if os.path.exists(p): os.remove(p)
-                    items.remove(x); ids.discard(tid)
+                    items.remove(x); ids.discard(tid); texts.pop(norm(x["text"]), None)
                 log.append(f"حذف {tid}"); continue
             tid = tweet_id(e.get("url") or "") or (str(e["id"]) if e.get("id") else None)
             if e.get("text") is not None and not tid: tid = "m" + datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%d%H%M%S") + str(queue.index(e))
