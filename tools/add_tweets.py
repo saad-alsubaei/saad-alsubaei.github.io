@@ -45,15 +45,26 @@ def tweet_id(s):
     return m.group(1) if m else None
 
 def fetch(tid):
-    # صفحة التضمين العامة (نفس ما تستخدمه المواقع لعرض التغريدات) — مجانية بلا مفتاح
-    tok = _token(tid)
-    d = get(f"https://cdn.syndication.twimg.com/tweet-result?id={tid}&lang=ar&token={tok}")
-    if not d or d.get("__typename") == "TweetTombstone": raise RuntimeError("التغريدة غير متاحة (محذوفة أو محمية)")
+    """يجلب نص التغريدة وصورها مجاناً بلا مفتاح.
+    ١) خدمة FxTwitter العامة المجانية (تعمل مع حساب الدكتور).  ٢) صفحة التضمين الرسمية احتياطاً."""
+    err = None
+    try:
+        d = get(f"https://api.fxtwitter.com/i/status/{tid}")
+        t = d.get("tweet") or {}
+        if t.get("id"):
+            photos = [m["url"] for m in ((t.get("media") or {}).get("photos") or []) if m.get("url")]
+            ts = t.get("created_timestamp")
+            date = datetime.datetime.fromtimestamp(ts, datetime.timezone.utc).strftime("%Y-%m-%d") if ts else datetime.date.today().isoformat()
+            return clean(t.get("text") or ""), photos, date
+        err = d.get("message")
+    except Exception as ex: err = str(ex)
+    d = get(f"https://cdn.syndication.twimg.com/tweet-result?id={tid}&lang=ar&token={_token(tid)}")
+    if not d or d.get("__typename") == "TweetTombstone":
+        raise RuntimeError("تعذّر جلب التغريدة تلقائياً (قد تكون محذوفة) — استخدم «الإضافة اليدوية»")
     text = d.get("text") or ""
     nt = (d.get("note_tweet") or {}).get("note_tweet_results", {}).get("result", {}).get("text")
     if nt: text = nt
     photos = [m["media_url_https"] for m in d.get("mediaDetails") or [] if m.get("type") == "photo"]
-    if not photos: photos = [p["url"] for p in d.get("photos") or [] if p.get("url")]
     date = (d.get("created_at") or "")[:10] or datetime.date.today().isoformat()
     return clean(text), photos, date
 
@@ -121,7 +132,7 @@ def main():
                     blobs.append(open(p, "rb").read()); os.remove(p)
             else:
                 text, photos, date = fetch(tid)
-                blobs = [get(u + ("&" if "?" in u else "?") + "name=large", raw=True) for u in photos[:4]]
+                blobs = [get(u if "fxtwitter" in u or "name=" in u else u + ("&" if "?" in u else "?") + "name=large", raw=True) for u in photos[:4]]
             if not text: raise RuntimeError("لا يوجد نص في التغريدة")
             k = norm(text)
             if k in texts: log.append(f"مكررة (نفس نص {texts[k]})"); continue
