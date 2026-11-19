@@ -1,20 +1,8 @@
 {
- "synd_tok": {
-  "status": 200,
-  "body": "{\"__typename\":\"TweetTombstone\",\"tombstone\":{}}"
- },
- "synd_a": {
-  "status": 200,
-  "body": "{\"__typename\":\"TweetTombstone\",\"tombstone\":{}}"
- },
- "fx": {
-  "status": 200,
-  "body": "{\"code\":200,\"message\":\"OK\",\"tweet\":{\"url\":\"https://x.com/alsubaeisaaad/status/2120246828176408897\",\"id\":\"2120246828176408897\",\"text\":\"قمت بتجربة بحثية مراراً في الذكاء الاصطناعي عن طريق (قوقل).\\n\\nأفادني كثيراً، وأحياناً يقع في أخطاء عجيبة، مع أنه يجزم بذكر المصدر والجزء والصفحة ويكون واهماً 🤔☺️.\\n\\nوكم مرة عاتبته على ذلك فيعتذر ويتأسف ثم يرجع للخطأ في نفس المسألة 🤔.\\n\\nوهذه ظاهرة علمية تسمى (بالهلوسة)\",\"raw_text\":{\"text\":\"قمت بتجربة بحثية مراراً في الذكاء الاصطناعي عن طريق (قوقل).\\n\\nأفادني كثيراً، وأحياناً يقع في أخطاء عجيبة، مع أنه يجزم بذكر المصدر والجزء والصفحة ويكون واهماً 🤔☺️.\\n\\nوكم مرة عاتبته على ذلك فيعتذر ويتأسف ثم يرجع للخطأ في نفس المسألة 🤔.\\n\\nوهذه ظاهرة علمية تسمى (بالهلوسة) https://t.co/5VayRa8nw3\",\"display_text_range\":[0,265],\"facets\":[{\"type\":\"media\",\"indices\":[266,289],\"id\":\"2120246820332879872\",\"display\":\"pic.x.com/5VayRa8nw3\",\"original\":\"https://t.co/5VayRa8nw3\",\"replacement\":\"https://x.com/alsubaeisaaad/status/2120246828176408897/photo/1\"}]},\"author\":{\"screen_name\":\"alsubaeisaaad\",\"url\":\"https://x.com/alsubaeisaaad\",\"id\":\"1188801857231249408\",\"followers\":11713,\"following\":248,\"likes\":7010,\"media_count\":994,\"name\":\"د.سعد السبيعي..\",\"description\":\"تبقى الكلمات أثرًا، لكن المواقف هي التي تكتب سيرة الرجال.!\\n\\nhttps://youtube.com/@alsubaeisaaad?si=OMkOLwk9al42bNOH\",\"raw_description\":{\"text\":\"تبقى الكلمات أثرًا، لكن المواقف هي التي تكتب سيرة الرجال.!\\n\\nhttps://t.co/cm8yL4FdsJ\",\"facets\":[{\"type\":\"url\",\"indices\":[60,83],\"original\":\"https://t.co/cm8yL4FdsJ\",\"re"
- },
- "vx": {
-  "err": "HTTP Error 403: Forbidden"
- },
- "oembed": {
-  "err": "HTTP Error 403: Forbidden"
- }
+ "id": "2120246828176408897",
+ "date": "2026-11-10",
+ "photos": [
+  "https://pbs.twimg.com/media/HWyhP-IXwAAn6l0.jpg?name=orig"
+ ],
+ "text": "قمت بتجربة بحثية مراراً في الذكاء الاصطناعي عن طريق (قوقل).\n\nأفادني كثيراً، وأحياناً يقع في أخطاء عجيبة، مع أنه يجزم بذكر المصدر والجزء والصفحة ويكون واهماً 🤔☺️.\n\nوكم مرة عاتبته على ذلك فيعتذر ويتأسف ثم يرجع للخطأ في نفس المسألة 🤔.\n\nوهذه ظاهرة علمية تسمى (بالهلوسة)"
 }
