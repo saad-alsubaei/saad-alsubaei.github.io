@@ -1,12 +1,17 @@
 {
- "updated": "2026-11-19T01:32Z",
- "total": 147,
- "last28": 147,
+ "updated": "2026-11-19T03:07Z",
+ "total": 156,
+ "last28": 156,
  "countries": [
   {
    "code": "SA",
    "name": "Saudi Arabia",
-   "count": 141
+   "count": 149
+  },
+  {
+   "code": "US",
+   "name": "United States",
+   "count": 2
   },
   {
    "code": "DZ",
@@ -31,11 +36,6 @@
   {
    "code": "NL",
    "name": "Netherlands",
-   "count": 1
-  },
-  {
-   "code": "US",
-   "name": "United States",
    "count": 1
   }
  ]
