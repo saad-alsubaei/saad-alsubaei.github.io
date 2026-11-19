@@ -278,7 +278,8 @@
 
 
   // ===== مشاركة التغريدة بقالب مميز (بطاقة 1080×1920 بهوية المكتبة — نفس فكرة مشاركة صفحة الكتاب) =====
-  const waText = (x) => x.text.slice(0, 600) + (x.text.length > 600 ? "…" : "") + "\n\nمن تغريدات " + (site.brandSub || "") + "\nفي المكتبة الرقمية:\n" + link(x);
+  const LIBTXT = "المكتبة الرقمية:\n" + new URL("./", location.href).href;
+  const waText = (x) => x.text.slice(0, 600) + (x.text.length > 600 ? "…" : "") + "\n\n" + LIBTXT;
   function rgb(c) { const k = rgb.k || (rgb.k = Object.assign(document.createElement("canvas"), { width: 1, height: 1 }).getContext("2d", { willReadFrequently: true }));
     k.clearRect(0, 0, 1, 1); k.fillStyle = "#000"; k.fillStyle = c || "#000"; k.fillRect(0, 0, 1, 1); const d = k.getImageData(0, 0, 1, 1).data; return [d[0], d[1], d[2]]; }
   const A = (c, a) => { const [r, g, b] = rgb(c); return `rgba(${r},${g},${b},${a})`; };
@@ -356,7 +357,7 @@
   $("wsClose").onclick = closeWs; $("wsModal").addEventListener("click", (e) => { if (e.target === $("wsModal")) closeWs(); });
   document.addEventListener("keydown", (e) => { if (!$("wsModal").hidden && e.key === "Escape") closeWs(); });
   $("wsGo").onclick = async () => {
-    if (!wsBlob) return; const x = wsX, text = "من تغريدات " + (site.brandSub || "") + "\nفي المكتبة الرقمية:\n" + link(x);
+    if (!wsBlob) return; const x = wsX, text = LIBTXT;
     let copied = false; try { await navigator.clipboard.writeText(text); copied = true; toast("تم نسخ الرابط ✓"); } catch (e) {}
     const file = new File([wsBlob], "tweet-" + x.id + ".jpg", { type: "image/jpeg" });
     if (navigator.canShare && navigator.share && navigator.canShare({ files: [file] })) { try { await navigator.share({ files: [file], text }); return; } catch (e) { if (e && e.name === "AbortError") return; } }
