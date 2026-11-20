@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-20T05:19Z",
- "total": 310,
- "last28": 310,
+ "updated": "2026-11-20T07:37Z",
+ "total": 316,
+ "last28": 316,
  "countries": [
   {
    "code": "SA",
@@ -11,7 +11,7 @@
   {
    "code": "EG",
    "name": "Egypt",
-   "count": 7
+   "count": 11
   },
   {
    "code": "DZ",
@@ -36,6 +36,11 @@
   {
    "code": "DE",
    "name": "Germany",
+   "count": 2
+  },
+  {
+   "code": "JO",
+   "name": "Hashemite Kingdom of Jordan",
    "count": 2
   },
   {
