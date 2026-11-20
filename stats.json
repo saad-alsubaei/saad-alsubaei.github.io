@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-20T18:16Z",
- "total": 348,
- "last28": 348,
+ "updated": "2026-11-20T19:26Z",
+ "total": 352,
+ "last28": 352,
  "countries": [
   {
    "code": "SA",
@@ -11,11 +11,16 @@
   {
    "code": "EG",
    "name": "Egypt",
-   "count": 11
+   "count": 13
   },
   {
    "code": "DZ",
    "name": "Algeria",
+   "count": 4
+  },
+  {
+   "code": "PS",
+   "name": "Palestine",
    "count": 4
   },
   {
@@ -46,11 +51,6 @@
   {
    "code": "NG",
    "name": "Nigeria",
-   "count": 2
-  },
-  {
-   "code": "PS",
-   "name": "Palestine",
    "count": 2
   },
   {
