@@ -916,3 +916,5 @@ html{scroll-padding-top:79px}
   .cat-meta{font-size:14.5px}
   .cat-of{font-size:13px;padding:2px 10px}
 }
+/* عرض المجموعة/التصنيف: لوحة الإحصاءات مخفية، فلا نسحب ما بعدها لأعلى (كانت البطاقة تنحشر تحت الشريط العلوي 4 بكسل على الشاشات الواسعة) */
+body.cat-view .stats-wrap{margin-top:0}
