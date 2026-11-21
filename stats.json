@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-21T00:00Z",
- "total": 361,
- "last28": 361,
+ "updated": "2026-11-21T03:02Z",
+ "total": 363,
+ "last28": 363,
  "countries": [
   {
    "code": "SA",
@@ -46,6 +46,11 @@
   {
    "code": "DE",
    "name": "Germany",
+   "count": 2
+  },
+  {
+   "code": "GB",
+   "name": "United Kingdom",
    "count": 2
   },
   {
