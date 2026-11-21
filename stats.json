@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-21T07:29Z",
- "total": 366,
- "last28": 366,
+ "updated": "2026-11-21T09:02Z",
+ "total": 368,
+ "last28": 368,
  "countries": [
   {
    "code": "SA",
@@ -44,6 +44,11 @@
    "count": 3
   },
   {
+   "code": "US",
+   "name": "United States",
+   "count": 3
+  },
+  {
    "code": "DE",
    "name": "Germany",
    "count": 2
@@ -54,13 +59,13 @@
    "count": 2
   },
   {
-   "code": "NG",
-   "name": "Nigeria",
+   "code": "KW",
+   "name": "Kuwait",
    "count": 2
   },
   {
-   "code": "US",
-   "name": "United States",
+   "code": "NG",
+   "name": "Nigeria",
    "count": 2
   },
   {
@@ -76,11 +81,6 @@
   {
    "code": "KG",
    "name": "Kyrgyzstan",
-   "count": 1
-  },
-  {
-   "code": "KW",
-   "name": "Kuwait",
    "count": 1
   },
   {
