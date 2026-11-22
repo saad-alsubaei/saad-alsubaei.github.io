@@ -59,7 +59,7 @@
   {
    "id": "PLGYl6zkEW4Gh9SINaTPPE2M1P6DVDdA44",
    "title": "وقفات مع صحيح مسلم",
-   "count": 6
+   "count": 5
   },
   {
    "id": "PLGYl6zkEW4GhbU3TI5Omm9QV0z_9CPQ3Q",
@@ -3096,12 +3096,7 @@
    "date": "2023-03-21",
    "dur": 1016,
    "short": false,
-   "lists": [
-    "PLGYl6zkEW4Gh9SINaTPPE2M1P6DVDdA44"
-   ],
-   "pos": {
-    "PLGYl6zkEW4Gh9SINaTPPE2M1P6DVDdA44": 5
-   }
+   "lists": []
   },
   {
    "yt": "-vC60Aw5SNc",
@@ -4618,5 +4613,5 @@
    }
   }
  ],
- "updated": "2026-11-21T16:23Z"
+ "updated": "2026-11-22T01:49Z"
 }
