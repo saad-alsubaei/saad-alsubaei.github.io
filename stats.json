@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-24T17:18Z",
- "total": 467,
- "last28": 467,
+ "updated": "2026-11-24T19:18Z",
+ "total": 470,
+ "last28": 470,
  "countries": [
   {
    "code": "SA",
    "name": "Saudi Arabia",
-   "count": 402
+   "count": 403
   },
   {
    "code": "EG",
@@ -51,6 +51,11 @@
   {
    "code": "DE",
    "name": "Germany",
+   "count": 2
+  },
+  {
+   "code": "FR",
+   "name": "France",
    "count": 2
   },
   {
