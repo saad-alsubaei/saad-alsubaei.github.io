@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-25T06:14Z",
- "total": 473,
- "last28": 473,
+ "updated": "2026-11-25T07:48Z",
+ "total": 474,
+ "last28": 474,
  "countries": [
   {
    "code": "SA",
@@ -96,6 +96,11 @@
   {
    "code": "KG",
    "name": "Kyrgyzstan",
+   "count": 1
+  },
+  {
+   "code": "LY",
+   "name": "Libya",
    "count": 1
   },
   {
