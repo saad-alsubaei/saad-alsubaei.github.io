@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-26T11:13Z",
- "total": 482,
- "last28": 482,
+ "updated": "2026-11-26T12:20Z",
+ "total": 484,
+ "last28": 484,
  "countries": [
   {
    "code": "SA",
@@ -16,6 +16,11 @@
   {
    "code": "DZ",
    "name": "Algeria",
+   "count": 4
+  },
+  {
+   "code": "GB",
+   "name": "United Kingdom",
    "count": 4
   },
   {
@@ -56,11 +61,6 @@
   {
    "code": "FR",
    "name": "France",
-   "count": 2
-  },
-  {
-   "code": "GB",
-   "name": "United Kingdom",
    "count": 2
   },
   {
