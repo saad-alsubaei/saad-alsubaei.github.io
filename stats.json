@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-27T23:12Z",
- "total": 505,
- "last28": 505,
+ "updated": "2026-11-28T00:04Z",
+ "total": 507,
+ "last28": 507,
  "countries": [
   {
    "code": "SA",
@@ -66,6 +66,11 @@
   {
    "code": "KW",
    "name": "Kuwait",
+   "count": 2
+  },
+  {
+   "code": "MY",
+   "name": "Malaysia",
    "count": 2
   },
   {
